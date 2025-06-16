@@ -13,7 +13,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::group(['namespace' => 'Admin',  'prefix' => 'admin'], function () {
+Route::group(['namespace' => 'Admin',  'prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
   
 
