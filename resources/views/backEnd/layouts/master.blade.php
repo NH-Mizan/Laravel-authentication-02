@@ -169,6 +169,7 @@
                 <!-- User box -->
                 <div class="user-box text-center">
                     <img src="{{ asset('public/backEnd/') }}/assets/images/users/user-1.jpg" alt="user-img" class="rounded-circle avatar-md" />
+                    
                     <div class="dropdown">
                         <a href="javascript: void(0);" class="text-dark dropdown-toggle h5 mt-2 mb-1 d-block"
                             data-bs-toggle="dropdown">{{ Auth::user()->name }}</a>
@@ -212,7 +213,7 @@
                 <div id="sidebar-menu">
                     <div class="main-logo">
                         <a href="{{ url('admin/dashboard') }}">
-                            <img src="" alt="">
+                            <img src="{{ asset(Auth::user()->image) }}" alt="">
                         </a>
                     </div>
                     <ul id="side-menu">
@@ -224,9 +225,26 @@
                         </li>
 
              
-                        <!-- nav items -->
-                    
-                        <!-- nav items end -->
+                        <li>
+                            <a href="#sidebar-users" data-bs-toggle="collapse">
+                                <i data-feather="user"></i>
+                                <span> User </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="sidebar-users">
+                                <ul class="nav-second-level">
+                                    <li>
+                                        <a href="{{ route('users.index') }}"><i data-feather="minus"></i>
+                                            Manage</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('users.create') }}"><i data-feather="minus"></i>
+                                            Create</a>
+                                    </li>
+                                   
+                                </ul>
+                            </div>
+                        </li>
                  
                     
                         <li>
