@@ -36,7 +36,7 @@
             <div class="container-fluid">
                 <ul class="list-unstyled topnav-menu float-end mb-0">
                     <li class="dropdown d-inline-block d-lg-none">
-                        <a  href="" class="nav-link dropdown-toggle arrow-none waves-effect waves-light">
+                        <a href="" class="nav-link dropdown-toggle arrow-none waves-effect waves-light">
                             <i class="fe-shopping-cart noti-icon"></i>
                         </a>
                     </li>
@@ -49,8 +49,8 @@
                     </li>
 
                     <li class="dropdown notification-list topbar-dropdown">
-                        <a class="nav-link dropdown-toggle waves-effect waves-light" data-bs-toggle="dropdown"
-                            href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle waves-effect waves-light" data-bs-toggle="dropdown" href="#"
+                            role="button" aria-haspopup="false" aria-expanded="false">
                             <i class="fe-bell noti-icon"></i>
                             <span class="badge bg-danger rounded-circle noti-icon-badge"></span>
                         </a>
@@ -67,11 +67,10 @@
                                 </h5>
                             </div>
 
-                          
+
 
                             <!-- All-->
-                            <a href=""
-                                class="dropdown-item text-center text-primary notify-item notify-all">
+                            <a href="" class="dropdown-item text-center text-primary notify-item notify-all">
                                 View all
                                 <i class="fe-arrow-right"></i>
                             </a>
@@ -111,15 +110,12 @@
                             <div class="dropdown-divider"></div>
 
                             <!-- item-->
-                            <a href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                  document.getElementById('logout-form').submit();"
-                                class="dropdown-item notify-item">
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                  document.getElementById('logout-form').submit();" class="dropdown-item notify-item">
                                 <i class="fe-log-out me-1"></i>
                                 <span>Logout</span>
                             </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                style="display: none;">
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
                         </div>
@@ -149,13 +145,18 @@
 
                     <li class="dropdown d-none d-xl-block">
                         <a class="nav-link dropdown-toggle waves-effect waves-light " href="{{ route('home') }}"
-                            target="_blank"> <span class="btn btn-success waves-effect waves-light  rounded-pill"> <i data-feather="airplay"></i> Visit Site</span> </a>
+                            target="_blank"> <span class="btn btn-success waves-effect waves-light  rounded-pill"> <i
+                                    data-feather="airplay"></i> Visit Site</span> </a>
                     </li>
                     <li class="dropdown d-none d-xl-block">
-                        <a class="nav-link dropdown-toggle waves-effect waves-light " href=""> <span class="btn btn-primary waves-effect waves-light  rounded-pill"> <i data-feather="shopping-cart"></i> POS</span> </a>
+                        <a class="nav-link dropdown-toggle waves-effect waves-light " href=""> <span
+                                class="btn btn-primary waves-effect waves-light  rounded-pill"> <i
+                                    data-feather="shopping-cart"></i> POS</span> </a>
                     </li>
                     <li class="dropdown d-none d-xl-block">
-                        <a class="nav-link dropdown-toggle waves-effect waves-light " href=""> <span class="btn btn-pink waves-effect waves-light  rounded-pill"> <i data-feather="layout"></i> Landing Page</span> </a>
+                        <a class="nav-link dropdown-toggle waves-effect waves-light " href=""> <span
+                                class="btn btn-pink waves-effect waves-light  rounded-pill"> <i
+                                    data-feather="layout"></i> Landing Page</span> </a>
                     </li>
                 </ul>
                 <div class="clearfix"></div>
@@ -168,8 +169,9 @@
             <div class="h-100" data-simplebar>
                 <!-- User box -->
                 <div class="user-box text-center">
-                    <img src="{{ asset('public/backEnd/') }}/assets/images/users/user-1.jpg" alt="user-img" class="rounded-circle avatar-md" />
-                    
+                    <img src="{{ asset('public/backEnd/') }}/assets/images/users/user-1.jpg" alt="user-img"
+                        class="rounded-circle avatar-md" />
+
                     <div class="dropdown">
                         <a href="javascript: void(0);" class="text-dark dropdown-toggle h5 mt-2 mb-1 d-block"
                             data-bs-toggle="dropdown">{{ Auth::user()->name }}</a>
@@ -193,15 +195,13 @@
                             </a>
 
                             <!-- item-->
-                            <a href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"
                                 class="dropdown-item notify-item">
                                 <i class="fe-log-out me-1"></i>
                                 <span>Logout</span>
                             </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                style="display: none;">
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
                         </div>
@@ -224,7 +224,7 @@
                             </a>
                         </li>
 
-             
+
                         <li>
                             <a href="#sidebar-users" data-bs-toggle="collapse">
                                 <i data-feather="user"></i>
@@ -241,12 +241,12 @@
                                         <a href="{{ route('users.create') }}"><i data-feather="minus"></i>
                                             Create</a>
                                     </li>
-                                   
+
                                 </ul>
                             </div>
                         </li>
-                 
-                    
+
+
                         <li>
                             <a href="#siebar-sitesetting" data-bs-toggle="collapse">
                                 <i data-feather="settings"></i>
@@ -268,14 +268,13 @@
                                             Contact</a>
                                     </li>
                                     <li>
-                                        <a href=""><i
-                                                data-feather="minus"></i> Shipping Charge</a>
+                                        <a href=""><i data-feather="minus"></i> Shipping Charge</a>
                                     </li>
                                     <li>
                                         <a href=""><i data-feather="minus"></i>
                                             Order Status</a>
                                     </li>
-                                    
+
                                     <li>
                                         <a href=""><i data-feather="minus"></i> Create Page</a>
                                     </li>
@@ -283,13 +282,13 @@
                             </div>
                         </li>
                         <!-- nav items end -->
-          
+
                         <!-- nav items end -->
-         
-                       
-                                  
-                          
-                       
+
+
+
+
+
                         <!-- nav items end -->
                     </ul>
                 </div>
@@ -311,8 +310,8 @@
             <footer class="footer">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-12 text-end">&copy; <a
-                                href="https://websolutionit.com" target="_blank">Websolution IT</a></div>
+                        <div class="col-md-12 text-end">&copy; <a href="https://websolutionit.com"
+                                target="_blank">Websolution IT</a></div>
                     </div>
                 </div>
             </footer>
@@ -483,8 +482,8 @@
 
                         <div class="d-grid mt-4">
                             <button class="btn btn-primary" id="resetBtn">Reset to Default</button>
-                            <a href="https://1.envato.market/uboldadmin" class="btn btn-danger mt-3"
-                                target="_blank"><i class="mdi mdi-basket me-1"></i> Purchase Now</a>
+                            <a href="https://1.envato.market/uboldadmin" class="btn btn-danger mt-3" target="_blank"><i
+                                    class="mdi mdi-basket me-1"></i> Purchase Now</a>
                         </div>
                     </div>
                 </div>
@@ -506,7 +505,7 @@
 
     <script src="{{ asset('public/backEnd/') }}/assets/js/sweetalert.min.js"></script>
     <script type="text/javascript">
-        $(".delete-confirm").click(function(event) {
+        $(".delete-confirm").click(function (event) {
             var form = $(this).closest("form");
             event.preventDefault();
             swal({
@@ -521,7 +520,7 @@
                 }
             });
         });
-        $(".change-confirm").click(function(event) {
+        $(".change-confirm").click(function (event) {
             var form = $(this).closest("form");
             event.preventDefault();
             swal({
@@ -538,18 +537,18 @@
     </script>
     <!--patho courier-->
     <script type="text/javascript">
-        $(document).ready(function() {
-            $('.pathaocity').change(function() {
+        $(document).ready(function () {
+            $('.pathaocity').change(function () {
                 var id = $(this).val();
                 if (id) {
                     $.ajax({
                         type: "GET",
                         url: "{{ url('admin/pathao-city') }}?city_id=" + id,
-                        success: function(res) {
+                        success: function (res) {
                             if (res && res.data && res.data.data) {
                                 $(".pathaozone").empty();
                                 $(".pathaozone").append('<option value="">Select..</option>');
-                                $.each(res.data.data, function(index, zone) {
+                                $.each(res.data.data, function (index, zone) {
                                     $(".pathaozone").append('<option value="' + zone
                                         .zone_id + '">' + zone.zone_name +
                                         '</option>');
@@ -569,18 +568,18 @@
         });
     </script>
     <script type="text/javascript">
-        $(document).ready(function() {
-            $('.pathaozone').change(function() {
+        $(document).ready(function () {
+            $('.pathaozone').change(function () {
                 var id = $(this).val();
                 if (id) {
                     $.ajax({
                         type: "GET",
                         url: "{{ url('admin/pathao-zone') }}?zone_id=" + id,
-                        success: function(res) {
+                        success: function (res) {
                             if (res && res.data && res.data.data) {
                                 $(".pathaoarea").empty();
                                 $(".pathaoarea").append('<option value="">Select..</option>');
-                                $.each(res.data.data, function(index, area) {
+                                $.each(res.data.data, function (index, area) {
                                     $(".pathaoarea").append('<option value="' + area
                                         .area_id + '">' + area.area_name +
                                         '</option>');
@@ -603,7 +602,7 @@
                 type: "GET",
                 url: "",
                 dataType: "html",
-                success: function(cartinfo) {
+                success: function (cartinfo) {
                     $('#cartTable').html(cartinfo)
                 }
             });
@@ -614,7 +613,7 @@
                 type: "GET",
                 url: "",
                 dataType: "html",
-                success: function(cartinfo) {
+                success: function (cartinfo) {
                     $("#cart_details").html(cartinfo);
                 },
             });
@@ -629,7 +628,7 @@
                     keyword: keyword
                 },
                 url: "",
-                success: function(products) {
+                success: function (products) {
                     if (products) {
                         $(".search_result").html(products);
                     } else {
@@ -638,7 +637,7 @@
                 },
             });
         }
-        $(".search_click").on("input", function() {
+        $(".search_click").on("input", function () {
             var keyword = $(this).val();
             $.ajax({
                 type: "GET",
@@ -646,7 +645,7 @@
                     keyword: keyword
                 },
                 url: "",
-                success: function(response) {
+                success: function (response) {
                     if (response.status === 'success') {
                         cart_content() + cart_details() + search_clear();
                     } else if (response) {
