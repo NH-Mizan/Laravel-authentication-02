@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\admin\BannerCategoryController;
 use App\Http\Controllers\admin\ContactController;
 use App\Http\Controllers\admin\GeneralSettingController;
 use App\Http\Controllers\admin\SocialMediaController;
@@ -79,5 +80,15 @@ Route::group(['namespace' => 'Admin',  'prefix' => 'admin', 'middleware' => ['au
     Route::post('contact/inactive', [ContactController::class, 'inactive'])->name('contact.inactive');
     Route::post('contact/active', [ContactController::class, 'active'])->name('contact.active');
     Route::post('contact/destroy', [ContactController::class, 'destroy'])->name('contact.destroy');
+
+     // banner category route
+    Route::get('banner-category/manage', [BannerCategoryController::class, 'index'])->name('banner_category.index');
+    Route::get('banner-category/create', [BannerCategoryController::class, 'create'])->name('banner_category.create');
+    Route::post('banner-category/save', [BannerCategoryController::class, 'store'])->name('banner_category.store');
+    Route::get('banner-category/{id}/edit', [BannerCategoryController::class, 'edit'])->name('banner_category.edit');
+    Route::post('banner-category/update', [BannerCategoryController::class, 'update'])->name('banner_category.update');
+    Route::post('banner-category/inactive', [BannerCategoryController::class, 'inactive'])->name('banner_category.inactive');
+    Route::post('banner-category/active', [BannerCategoryController::class, 'active'])->name('banner_category.active');
+    Route::post('banner-category/destroy', [BannerCategoryController::class, 'destroy'])->name('banner_category.destroy');
 
 });

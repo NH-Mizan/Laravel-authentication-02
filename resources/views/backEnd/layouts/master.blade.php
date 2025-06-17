@@ -245,7 +245,25 @@
                                 </ul>
                             </div>
                         </li>
-
+                           <li>
+                            <a href="#siebar-banner" data-bs-toggle="collapse">
+                                <i data-feather="image"></i>
+                                <span> Banner & Ads </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="siebar-banner">
+                                <ul class="nav-second-level">
+                                    <li>
+                                        <a href="{{ route('banner_category.index') }}"><i
+                                                data-feather="minus"></i> Banner Category</a>
+                                    </li>
+                                    <li>
+                                        <a href=""><i data-feather="minus"></i>
+                                            Banner & Ads</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
 
                         <li>
                             <a href="#siebar-sitesetting" data-bs-toggle="collapse">
