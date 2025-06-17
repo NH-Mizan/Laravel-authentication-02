@@ -1,94 +1,37 @@
 @extends('frontEnd.layouts.master')
 @section('content')
 <section class="slider-section">
-      <div class="container">
+    <div class="container">
         <div class="row">
-          <div class="col-sm-8">
-            <div class="home-slider-container">
-              <div class="main_slider owl-carousel owl-loaded owl-drag">
-                <!-- slider item -->
-
-                <!-- slider item -->
-
-                <!-- slider item -->
-                <div class="owl-stage-outer">
-                  <div class="owl-stage" style="transform: translate3d(-2328px, 0px, 0px); transition: 1s; width: 5432px;">
-                    <div class="owl-item cloned" style="width: 776px;">
-                      <div class="slider-item">
-                        <a href="#">
-                          <img src="http://localhost/sell-pixer/public/uploads/banner/17389193411729274176websolution-it-banner-2.jpg" alt="" />
-                        </a>
-                      </div>
+            <div class="col-sm-8">
+                <div class="home-slider-container">
+                    <div class="main_slider owl-carousel">
+                        @foreach ($sliders as $key => $value)
+                            <div class="slider-item">
+                               <a href="{{$value->link}}">
+                                    <img src="{{ asset($value->image) }}" alt="" />
+                               </a>
+                            </div>
+                            <!-- slider item -->
+                        @endforeach
                     </div>
-                    <div class="owl-item cloned" style="width: 776px;">
-                      <div class="slider-item">
-                        <a href="#">
-                          <img src="http://localhost/sell-pixer/public/uploads/banner/1740458085eid-banner-01.jpg" alt="" />
-                        </a>
-                      </div>
-                    </div>
-                    <div class="owl-item" style="width: 776px;">
-                      <div class="slider-item">
-                        <a href="https://sellpixer.websolutionit.com/subcategory/bags">
-                          <img src="http://localhost/sell-pixer/public/uploads/banner/17450025431740458571eid-banner-2.jpg" alt="" />
-                        </a>
-                      </div>
-                    </div>
-                    <div class="owl-item active" style="width: 776px;">
-                      <div class="slider-item">
-                        <a href="#">
-                          <img src="http://localhost/sell-pixer/public/uploads/banner/17389193411729274176websolution-it-banner-2.jpg" alt="" />
-                        </a>
-                      </div>
-                    </div>
-                    <div class="owl-item" style="width: 776px;">
-                      <div class="slider-item">
-                        <a href="#">
-                          <img src="http://localhost/sell-pixer/public/uploads/banner/1740458085eid-banner-01.jpg" alt="" />
-                        </a>
-                      </div>
-                    </div>
-                    <div class="owl-item cloned" style="width: 776px;">
-                      <div class="slider-item">
-                        <a href="https://sellpixer.websolutionit.com/subcategory/bags">
-                          <img src="http://localhost/sell-pixer/public/uploads/banner/17450025431740458571eid-banner-2.jpg" alt="" />
-                        </a>
-                      </div>
-                    </div>
-                    <div class="owl-item cloned" style="width: 776px;">
-                      <div class="slider-item">
-                        <a href="#">
-                          <img src="http://localhost/sell-pixer/public/uploads/banner/17389193411729274176websolution-it-banner-2.jpg" alt="" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
                 </div>
-                <div class="owl-nav">
-                  <button type="button" role="presentation" class="owl-prev"><i class="fa-solid fa-angle-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="fa-solid fa-angle-right"></i></button>
+            </div>
+            <!-- col-end -->
+            <div class="col-sm-4">
+                <div class="banner-right">
+                    @foreach($sliderrightads as $key=>$value)
+                    <div class="banner-right-item item-{{$key+1}}">
+                        <a href="{{$value->link}}">
+                            <img src="{{asset($value->image)}}" alt="">
+                        </a>
+                    </div>
+                    @endforeach
                 </div>
-                <div class="owl-dots disabled"></div>
-              </div>
             </div>
-          </div>
-          <!-- col-end -->
-          <div class="col-sm-4">
-            <div class="banner-right">
-              <div class="banner-right-item item-1">
-                <a href="https://sellpixer.websolutionit.com/category/cosmetics">
-                  <img src="http://localhost/sell-pixer/public/uploads/banner/1740459312right-banner.jpg" alt="" />
-                </a>
-              </div>
-              <div class="banner-right-item item-2">
-                <a href="https://sellpixer.websolutionit.com/category/eid-collection">
-                  <img src="http://localhost/sell-pixer/public/uploads/banner/1740461073eid-collection2.jpg" alt="" />
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
     <!-- slider end -->
     <div class="home-category">
       <div class="container">

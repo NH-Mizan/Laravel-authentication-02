@@ -258,7 +258,7 @@
                                                 data-feather="minus"></i> Banner Category</a>
                                     </li>
                                     <li>
-                                        <a href=""><i data-feather="minus"></i>
+                                        <a href="{{ route('banners.index') }}"><i data-feather="minus"></i>
                                             Banner & Ads</a>
                                     </li>
                                 </ul>

@@ -714,8 +714,9 @@ a.view_all:hover {
 
 .banner-right-item img {
     transition: 0.35s all;
+    height: 186px;
+    width: 100%;
 }
-
 .banner-right-item:hover.banner-right-item img {
     transform: scale(1.1);
 }
