@@ -48,7 +48,7 @@
   <div class="mobile-menu">
     <div class="mobile-menu-logo">
       <div class="logo-image">
-        <img src="http://localhost/sell-pixer/public/uploads/settings/1729703474-sell-pixer.webp" alt="" />
+        <img src="{{ asset($generalsetting->dark_logo)}}" alt="" />
       </div>
       <div class="mobile-menu-close">
         <i class="fa fa-times"></i>
@@ -433,7 +433,7 @@
           </a>
         </div>
         <div class="menu-logo">
-          <a href="http://localhost/sell-pixer"><img src="http://localhost/sell-pixer/public/uploads/settings/1729703474-sell-pixer.webp" alt="" /></a>
+          <a href="http://localhost/sell-pixer"><img src="{{ asset($generalsetting->dark_logo) }}" alt="" /></a>
         </div>
         <div class="menu-bag">
           <a href="http://localhost/sell-pixer/customer/checkout" class="margin-shopping">
@@ -465,7 +465,7 @@
             <div class="col-sm-12">
               <div class="logo-header">
                 <div class="main-logo">
-                  <a href="http://localhost/sell-pixer"><img src="http://localhost/sell-pixer/public/uploads/settings/1729703474-sell-pixer.webp" alt="" /></a>
+                  <a href="http://localhost/sell-pixer"><img src="{{ asset($generalsetting->dark_logo) }}" alt="" /></a>
                 </div>
                 <div class="main-search">
                   <form action="http://localhost/sell-pixer/search">
@@ -1268,7 +1268,7 @@
           <div class="col-sm-4">
             <div class="footer-about">
               <a href="http://localhost/sell-pixer">
-                <img src="http://localhost/sell-pixer/public/uploads/settings/1729703474-sell-pixer.webp" alt="" />
+                <img src="{{ asset($generalsetting->dark_logo) }}" alt="" />
               </a>
               <p>Dinajpur City College, Balubari, Dinajpur</p>
               <p><a href="tel:01766950986" class="footer-hotlint">01766950986</a></p>
