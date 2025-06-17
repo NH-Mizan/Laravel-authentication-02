@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\admin\ContactController;
 use App\Http\Controllers\admin\GeneralSettingController;
 use App\Http\Controllers\admin\SocialMediaController;
 use Illuminate\Support\Facades\Route;
@@ -69,5 +70,14 @@ Route::group(['namespace' => 'Admin',  'prefix' => 'admin', 'middleware' => ['au
     Route::post('social-media/active', [SocialMediaController::class, 'active'])->name('socialmedias.active');
     Route::post('social-media/destroy', [SocialMediaController::class, 'destroy'])->name('socialmedias.destroy');
   
+      // contact route
+    Route::get('contact/manage', [ContactController::class, 'index'])->name('contact.index');
+    Route::get('contact/create', [ContactController::class, 'create'])->name('contact.create');
+    Route::post('contact/save', [ContactController::class, 'store'])->name('contact.store');
+    Route::get('contact/{id}/edit', [ContactController::class, 'edit'])->name('contact.edit');
+    Route::post('contact/update', [ContactController::class, 'update'])->name('contact.update');
+    Route::post('contact/inactive', [ContactController::class, 'inactive'])->name('contact.inactive');
+    Route::post('contact/active', [ContactController::class, 'active'])->name('contact.active');
+    Route::post('contact/destroy', [ContactController::class, 'destroy'])->name('contact.destroy');
 
 });

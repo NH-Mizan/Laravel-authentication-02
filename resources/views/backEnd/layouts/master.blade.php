@@ -264,7 +264,7 @@
                                             Social Media</a>
                                     </li>
                                     <li>
-                                        <a href=""><i data-feather="minus"></i>
+                                        <a href="{{ route('contact.index') }}"><i data-feather="minus"></i>
                                             Contact</a>
                                     </li>
                                     <li>
