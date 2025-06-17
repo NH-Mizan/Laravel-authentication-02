@@ -1,5 +1,5 @@
 @extends('backEnd.layouts.master')
-@section('title','General Setting Manage')
+@section('title','Social Media Manage')
 
 @section('css')
 <link href="{{asset('/public/backEnd/')}}/assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
@@ -15,12 +15,10 @@
     <div class="row">
         <div class="col-12">
             <div class="page-title-box">
-                <div class="page-title-box">
-                    <div class="page-title-right">
-                           <a href="{{ route('settings.create') }}" class="btn btn-primary rounded-pill">Create</a>
-                    </div>
-                    <h4 class="page-title">General Setting Manage</h4>
+                <div class="page-title-right">
+                    <a href="{{route('socialmedias.create')}}" class="btn btn-primary rounded-pill">Create</a>
                 </div>
+                <h4 class="page-title">Social Media Manage </h4>
             </div>
         </div>
     </div>       
@@ -34,9 +32,7 @@
                         <tr>
                             <th>SL</th>
                             <th>Name</th>
-                            <th>White Logo</th>
-                            <th>Dark Logo</th>
-                            <th>Favicon</th>
+                            <th>Icon</th>
                             <th>Status</th>
                             <th>Action</th>
                         </tr>
@@ -47,27 +43,30 @@
                         @foreach($show_data as $key=>$value)
                         <tr>
                             <td>{{$loop->iteration}}</td>
-                            <td>{{$value->name}}</td>
-                            <td><img src="{{asset('public/'.$value->white_logo)}}" class="backend-image" alt=""></td>
-                            <td><img src="{{asset('public/'.$value->dark_logo)}}" class="backend-image" alt=""></td>
-                            <td><img src="{{asset('public/'.$value->favicon)}}" class="backend-image" alt=""></td>
+                            <td>{{$value->title}}</td>
+                            <td>{{$value->icon}}</td>
                             <td>@if($value->status==1)<span class="badge bg-soft-success text-success">Active</span> @else <span class="badge bg-soft-danger text-danger">Inactive</span> @endif</td>
                             <td>
                                 <div class="button-list">
                                     @if($value->status == 1)
-                                    <form method="post" action="{{route('settings.inactive')}}" class="d-inline"> 
+                                    <form method="post" action="{{route('socialmedias.inactive')}}" class="d-inline"> 
                                     @csrf
                                     <input type="hidden" value="{{$value->id}}" name="hidden_id">       
                                     <button type="button" class="btn btn-xs  btn-secondary waves-effect waves-light change-confirm"><i class="fe-thumbs-down"></i></button></form>
                                     @else
-                                    <form method="post" action="{{route('settings.active')}}" class="d-inline">
+                                    <form method="post" action="{{route('socialmedias.active')}}" class="d-inline">
                                         @csrf
                                     <input type="hidden" value="{{$value->id}}" name="hidden_id">        
                                     <button type="button" class="btn btn-xs  btn-success waves-effect waves-light change-confirm"><i class="fe-thumbs-up"></i></button></form>
                                     @endif
 
-                                    <a href="{{route('settings.edit',$value->id)}}" class="btn btn-xs btn-primary waves-effect waves-light"><i class="fe-edit-1"></i></a>
-                                    </div>
+                                    <a href="{{route('socialmedias.edit',$value->id)}}" class="btn btn-xs btn-primary waves-effect waves-light"><i class="fe-edit-1"></i></a>
+
+                                    <form method="post" action="{{route('socialmedias.destroy')}}" class="d-inline">        
+                                        @csrf
+                                    <input type="hidden" value="{{$value->id}}" name="hidden_id">
+                                    <button type="submit" class="btn btn-xs btn-danger waves-effect waves-light delete-confirm"><i class="mdi mdi-close"></i></button></form>
+                                </div>
                             </td>
                         </tr>
                         @endforeach

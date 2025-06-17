@@ -256,11 +256,11 @@
                             <div class="collapse" id="siebar-sitesetting">
                                 <ul class="nav-second-level">
                                     <li>
-                                        <a href="{{ route('settings.index') }}""><i data-feather="minus"></i>
+                                        <a href="{{ route('settings.index') }}"><i data-feather="minus"></i>
                                             General Setting</a>
                                     </li>
                                     <li>
-                                        <a href=""><i data-feather="minus"></i>
+                                        <a href="{{ route('socialmedias.index') }}"><i data-feather="minus"></i>
                                             Social Media</a>
                                     </li>
                                     <li>

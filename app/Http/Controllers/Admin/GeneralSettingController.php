@@ -73,6 +73,7 @@ class GeneralSettingController extends Controller
     public function edit($id)
     {
         $edit_data = GeneralSetting::find($id);
+        
         return view('backEnd.settings.edit', compact('edit_data'));
     }
 
@@ -126,6 +127,7 @@ class GeneralSettingController extends Controller
         }
 
         $input['status'] = $request->has('status') ? 1 : 0;
+        
 
         $update_data->update($input);
 

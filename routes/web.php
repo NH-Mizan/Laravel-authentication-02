@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\admin\GeneralSettingController;
+use App\Http\Controllers\admin\SocialMediaController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Admin\DashboardController;
@@ -13,6 +14,13 @@ use App\Http\Controllers\Admin\UserController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+Route::get('/cc', function () {
+    Artisan::call('config:clear');
+    Artisan::call('cache:clear');
+    Artisan::call('route:clear');
+    Artisan::call('view:clear');
+    return "clear";
+});
 
 Auth::routes();
 
@@ -48,6 +56,18 @@ Route::group(['namespace' => 'Admin',  'prefix' => 'admin', 'middleware' => ['au
     Route::post('settings/inactive', [GeneralSettingController::class, 'inactive'])->name('settings.inactive');
     Route::post('settings/active', [GeneralSettingController::class, 'active'])->name('settings.active');
     Route::post('settings/destroy', [GeneralSettingController::class, 'destroy'])->name('settings.destroy');
+
+
+
+       // SocialMedia
+    Route::get('social-media/manage', [SocialMediaController::class, 'index'])->name('socialmedias.index');
+    Route::get('social-media/create', [SocialMediaController::class, 'create'])->name('socialmedias.create');
+    Route::post('social-media/save', [SocialMediaController::class, 'store'])->name('socialmedias.store');
+    Route::get('social-media/{id}/edit', [SocialMediaController::class, 'edit'])->name('socialmedias.edit');
+    Route::post('social-media/update', [SocialMediaController::class, 'update'])->name('socialmedias.update');
+    Route::post('social-media/inactive', [SocialMediaController::class, 'inactive'])->name('socialmedias.inactive');
+    Route::post('social-media/active', [SocialMediaController::class, 'active'])->name('socialmedias.active');
+    Route::post('social-media/destroy', [SocialMediaController::class, 'destroy'])->name('socialmedias.destroy');
   
 
 });

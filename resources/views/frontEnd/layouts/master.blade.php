@@ -2,31 +2,31 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <title>@yield('title')</title>
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="" alt="Websolution IT" />
-    <meta name="author" content="Websolution IT" />
-    <link rel="canonical" href="" />
-    @stack('seo') @stack('css')
-    <link rel="stylesheet" href="{{ asset('public/frontEnd/css/bootstrap.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('public/frontEnd/css/animate.css') }}" />
-    <link rel="stylesheet" href="{{ asset('public/frontEnd/css/all.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('public/frontEnd/css/owl.carousel.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('public/frontEnd/css/owl.theme.default.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('public/frontEnd/css/mobile-menu.css') }}" />
-    <link rel="stylesheet" href="{{ asset('public/frontEnd/css/select2.min.css') }}" />
-    <!-- toastr css -->
-    <link rel="stylesheet" href="{{ asset('public/backEnd/') }}/assets/css/toastr.min.css" />
-    <link rel="stylesheet" href="{{ asset('public/frontEnd/css/wsit-menu.css') }}" />
-    <link rel="stylesheet" href="{{ asset('public/frontEnd/css/style.css?v=1.0.3') }}" />
-    <link rel="stylesheet" href="{{ asset('public/frontEnd/css/responsive.css?v=1.0.2') }}" />
-    <script src="{{ asset('public/frontEnd/js/jquery-3.7.1.min.js') }}"></script>
-    
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="csrf-token" content="{{ csrf_token() }}" />
+  <title>@yield('title')</title>
+  <!-- App favicon -->
+  <link rel="shortcut icon" href="" alt="Websolution IT" />
+  <meta name="author" content="Websolution IT" />
+  <link rel="canonical" href="{{ asset('public/' . $generalsetting->favicon)}}" />
+  @stack('seo') @stack('css')
+  <link rel="stylesheet" href="{{ asset('public/frontEnd/css/bootstrap.min.css') }}" />
+  <link rel="stylesheet" href="{{ asset('public/frontEnd/css/animate.css') }}" />
+  <link rel="stylesheet" href="{{ asset('public/frontEnd/css/all.min.css') }}" />
+  <link rel="stylesheet" href="{{ asset('public/frontEnd/css/owl.carousel.min.css') }}" />
+  <link rel="stylesheet" href="{{ asset('public/frontEnd/css/owl.theme.default.min.css') }}" />
+  <link rel="stylesheet" href="{{ asset('public/frontEnd/css/mobile-menu.css') }}" />
+  <link rel="stylesheet" href="{{ asset('public/frontEnd/css/select2.min.css') }}" />
+  <!-- toastr css -->
+  <link rel="stylesheet" href="{{ asset('public/backEnd/') }}/assets/css/toastr.min.css" />
+  <link rel="stylesheet" href="{{ asset('public/frontEnd/css/wsit-menu.css') }}" />
+  <link rel="stylesheet" href="{{ asset('public/frontEnd/css/style.css?v=1.0.3') }}" />
+  <link rel="stylesheet" href="{{ asset('public/frontEnd/css/responsive.css?v=1.0.2') }}" />
+  <script src="{{ asset('public/frontEnd/js/jquery-3.7.1.min.js') }}"></script>
 
-   
+
+
 </head>
 
 <body class="gotop">
@@ -48,7 +48,7 @@
   <div class="mobile-menu">
     <div class="mobile-menu-logo">
       <div class="logo-image">
-        <img src="{{ asset($generalsetting->dark_logo)}}" alt="" />
+        <img src="{{ asset('public/' . $generalsetting->dark_logo)}}" alt="" />
       </div>
       <div class="mobile-menu-close">
         <i class="fa fa-times"></i>
@@ -57,7 +57,8 @@
     <ul class="first-nav">
       <li class="parent-category">
         <a href="http://localhost/sell-pixer/category/mens-fashion" class="menu-category-name">
-          <img src="http://localhost/sell-pixer/public/uploads/category/1729870308-men-fashion.webp" alt="" class="side_cat_img" />
+          <img src="http://localhost/sell-pixer/public/uploads/category/1729870308-men-fashion.webp" alt=""
+            class="side_cat_img" />
           Mens Fashion
         </a>
         <span class="menu-category-toggle">
@@ -67,47 +68,68 @@
           <li class="parent-subcategory">
             <a href="http://localhost/sell-pixer/subcategory/clothing" class="menu-subcategory-name">Clothing</a>
           </li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/t-shirt" class="menu-childcategory-name">T-Shirt</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/polo-shirt" class="menu-childcategory-name">Polo Shirt</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/shirt" class="menu-childcategory-name">Shirt</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/jeans" class="menu-childcategory-name">Jeans</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/panjabi" class="menu-childcategory-name">Panjabi</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/y-cloth" class="menu-childcategory-name">Y-cloth</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/t-shirt"
+              class="menu-childcategory-name">T-Shirt</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/polo-shirt"
+              class="menu-childcategory-name">Polo Shirt</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/shirt"
+              class="menu-childcategory-name">Shirt</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/jeans"
+              class="menu-childcategory-name">Jeans</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/panjabi"
+              class="menu-childcategory-name">Panjabi</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/y-cloth"
+              class="menu-childcategory-name">Y-cloth</a></li>
 
           <li class="parent-subcategory">
             <a href="http://localhost/sell-pixer/subcategory/shoes" class="menu-subcategory-name">Shoes</a>
           </li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/formal-shoes" class="menu-childcategory-name">Formal Shoes</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/loafer" class="menu-childcategory-name">Loafer</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/sneakers" class="menu-childcategory-name">Sneakers</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/casual-shoes" class="menu-childcategory-name">Casual Shoes</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/sandals" class="menu-childcategory-name">Sandals</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/formal-shoes"
+              class="menu-childcategory-name">Formal Shoes</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/loafer"
+              class="menu-childcategory-name">Loafer</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/sneakers"
+              class="menu-childcategory-name">Sneakers</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/casual-shoes"
+              class="menu-childcategory-name">Casual Shoes</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/sandals"
+              class="menu-childcategory-name">Sandals</a></li>
 
           <li class="parent-subcategory">
             <a href="http://localhost/sell-pixer/subcategory/accessories" class="menu-subcategory-name">Accessories</a>
           </li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/hats-&amp;-caps" class="menu-childcategory-name">Hats &amp; Caps</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/ties" class="menu-childcategory-name">Ties</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/belt-&amp;-wallet" class="menu-childcategory-name">Belt &amp; Wallet</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/hats-&amp;-caps"
+              class="menu-childcategory-name">Hats &amp; Caps</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/ties"
+              class="menu-childcategory-name">Ties</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/belt-&amp;-wallet"
+              class="menu-childcategory-name">Belt &amp; Wallet</a></li>
 
           <li class="parent-subcategory">
             <a href="http://localhost/sell-pixer/subcategory/watches" class="menu-subcategory-name">Watches</a>
           </li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/metal-chain" class="menu-childcategory-name">Metal Chain</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/leather-strap" class="menu-childcategory-name">Leather Strap</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/sunthetic-strap" class="menu-childcategory-name">Sunthetic Strap</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/original-brand" class="menu-childcategory-name">Original Brand</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/smart-watch" class="menu-childcategory-name">Smart Watch</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/metal-chain"
+              class="menu-childcategory-name">Metal Chain</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/leather-strap"
+              class="menu-childcategory-name">Leather Strap</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/sunthetic-strap"
+              class="menu-childcategory-name">Sunthetic Strap</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/original-brand"
+              class="menu-childcategory-name">Original Brand</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/smart-watch"
+              class="menu-childcategory-name">Smart Watch</a></li>
 
           <li class="parent-subcategory">
             <a href="http://localhost/sell-pixer/subcategory/eyewear" class="menu-subcategory-name">Eyewear</a>
           </li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/eyeglasses" class="menu-childcategory-name">Eyeglasses</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/eyeglasses"
+              class="menu-childcategory-name">Eyeglasses</a></li>
         </ul>
       </li>
       <li class="parent-category">
         <a href="http://localhost/sell-pixer/category/womens-fashion" class="menu-category-name">
-          <img src="http://localhost/sell-pixer/public/uploads/category/1729870638-womens-fashion.webp" alt="" class="side_cat_img" />
+          <img src="http://localhost/sell-pixer/public/uploads/category/1729870638-womens-fashion.webp" alt=""
+            class="side_cat_img" />
           Womens Fashion
         </a>
         <span class="menu-category-toggle">
@@ -117,64 +139,96 @@
           <li class="parent-subcategory">
             <a href="http://localhost/sell-pixer/subcategory/bags" class="menu-subcategory-name">Bags</a>
           </li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/hand-bag" class="menu-childcategory-name">Hand Bag</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/party-bag" class="menu-childcategory-name">Party Bag</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/leather-bag" class="menu-childcategory-name">Leather Bag</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/wallet" class="menu-childcategory-name">Wallet</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/purse" class="menu-childcategory-name">Purse</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/hand-bag"
+              class="menu-childcategory-name">Hand Bag</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/party-bag"
+              class="menu-childcategory-name">Party Bag</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/leather-bag"
+              class="menu-childcategory-name">Leather Bag</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/wallet"
+              class="menu-childcategory-name">Wallet</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/purse"
+              class="menu-childcategory-name">Purse</a></li>
 
           <li class="parent-subcategory">
             <a href="http://localhost/sell-pixer/subcategory/watches" class="menu-subcategory-name">Watches</a>
           </li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/metal-chain" class="menu-childcategory-name">Metal Chain</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/leather-strap" class="menu-childcategory-name">Leather Strap</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/original-brand" class="menu-childcategory-name">Original Brand</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/metal-chain"
+              class="menu-childcategory-name">Metal Chain</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/leather-strap"
+              class="menu-childcategory-name">Leather Strap</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/original-brand"
+              class="menu-childcategory-name">Original Brand</a></li>
 
           <li class="parent-subcategory">
-            <a href="http://localhost/sell-pixer/subcategory/salwar-kameez" class="menu-subcategory-name">Salwar Kameez</a>
+            <a href="http://localhost/sell-pixer/subcategory/salwar-kameez" class="menu-subcategory-name">Salwar
+              Kameez</a>
           </li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/unstitched" class="menu-childcategory-name">Unstitched</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/readymade" class="menu-childcategory-name">ReadyMade</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/replica" class="menu-childcategory-name">Replica</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/deshi-boutique" class="menu-childcategory-name">Deshi Boutique</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/lawn" class="menu-childcategory-name">Lawn</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/unstitched"
+              class="menu-childcategory-name">Unstitched</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/readymade"
+              class="menu-childcategory-name">ReadyMade</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/replica"
+              class="menu-childcategory-name">Replica</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/deshi-boutique"
+              class="menu-childcategory-name">Deshi Boutique</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/lawn"
+              class="menu-childcategory-name">Lawn</a></li>
 
           <li class="parent-subcategory">
-            <a href="http://localhost/sell-pixer/subcategory/womens-sharee" class="menu-subcategory-name">womens Sharee</a>
+            <a href="http://localhost/sell-pixer/subcategory/womens-sharee" class="menu-subcategory-name">womens
+              Sharee</a>
           </li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/cotton" class="menu-childcategory-name">Cotton</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/painted-sharee" class="menu-childcategory-name">Painted Sharee</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/tangail" class="menu-childcategory-name">Tangail</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/taant" class="menu-childcategory-name">Taant</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/kota" class="menu-childcategory-name">Kota</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/cotton"
+              class="menu-childcategory-name">Cotton</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/painted-sharee"
+              class="menu-childcategory-name">Painted Sharee</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/tangail"
+              class="menu-childcategory-name">Tangail</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/taant"
+              class="menu-childcategory-name">Taant</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/kota"
+              class="menu-childcategory-name">Kota</a></li>
 
           <li class="parent-subcategory">
             <a href="http://localhost/sell-pixer/subcategory/jewellery" class="menu-subcategory-name">Jewellery</a>
           </li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/ring" class="menu-childcategory-name">Ring</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/earrings" class="menu-childcategory-name">EarRings</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/bracelet" class="menu-childcategory-name">Bracelet</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/necklace" class="menu-childcategory-name">Necklace</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/ring"
+              class="menu-childcategory-name">Ring</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/earrings"
+              class="menu-childcategory-name">EarRings</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/bracelet"
+              class="menu-childcategory-name">Bracelet</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/necklace"
+              class="menu-childcategory-name">Necklace</a></li>
 
           <li class="parent-subcategory">
             <a href="http://localhost/sell-pixer/subcategory/shoes" class="menu-subcategory-name">Shoes</a>
           </li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/heels" class="menu-childcategory-name">Heels</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/pump-shoes" class="menu-childcategory-name">Pump Shoes</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/sneakers" class="menu-childcategory-name">Sneakers</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/flats" class="menu-childcategory-name">Flats</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/heels"
+              class="menu-childcategory-name">Heels</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/pump-shoes"
+              class="menu-childcategory-name">Pump Shoes</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/sneakers"
+              class="menu-childcategory-name">Sneakers</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/flats"
+              class="menu-childcategory-name">Flats</a></li>
 
           <li class="parent-subcategory">
             <a href="http://localhost/sell-pixer/subcategory/innerwear" class="menu-subcategory-name">Innerwear</a>
           </li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/bras" class="menu-childcategory-name">Bras</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/panties" class="menu-childcategory-name">Panties</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/lingerie-sets" class="menu-childcategory-name">Lingerie Sets</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/bras"
+              class="menu-childcategory-name">Bras</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/panties"
+              class="menu-childcategory-name">Panties</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/lingerie-sets"
+              class="menu-childcategory-name">Lingerie Sets</a></li>
         </ul>
       </li>
       <li class="parent-category">
         <a href="http://localhost/sell-pixer/category/cosmetics" class="menu-category-name">
-          <img src="http://localhost/sell-pixer/public/uploads/category/1729870761-cosmetics.webp" alt="" class="side_cat_img" />
+          <img src="http://localhost/sell-pixer/public/uploads/category/1729870761-cosmetics.webp" alt=""
+            class="side_cat_img" />
           Cosmetics
         </a>
         <span class="menu-category-toggle">
@@ -182,63 +236,92 @@
         </span>
         <ul class="second-nav" style="display: none;">
           <li class="parent-subcategory">
-            <a href="http://localhost/sell-pixer/subcategory/personal-care" class="menu-subcategory-name">Personal Care</a>
+            <a href="http://localhost/sell-pixer/subcategory/personal-care" class="menu-subcategory-name">Personal
+              Care</a>
           </li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/sanitary-napkin" class="menu-childcategory-name">Sanitary Napkin</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/toothpaste" class="menu-childcategory-name">Toothpaste</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/cleaning" class="menu-childcategory-name">Cleaning</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/sanitary-napkin"
+              class="menu-childcategory-name">Sanitary Napkin</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/toothpaste"
+              class="menu-childcategory-name">Toothpaste</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/cleaning"
+              class="menu-childcategory-name">Cleaning</a></li>
 
           <li class="parent-subcategory">
             <a href="http://localhost/sell-pixer/subcategory/fragrances" class="menu-subcategory-name">Fragrances</a>
           </li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/perfumed" class="menu-childcategory-name">Perfumed</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/men%27s-body" class="menu-childcategory-name">Men's Body</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/women%27s-body-spray" class="menu-childcategory-name">Women's Body Spray</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/perfumed"
+              class="menu-childcategory-name">Perfumed</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/men%27s-body"
+              class="menu-childcategory-name">Men's Body</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/women%27s-body-spray"
+              class="menu-childcategory-name">Women's Body Spray</a></li>
 
           <li class="parent-subcategory">
             <a href="http://localhost/sell-pixer/subcategory/haire-care" class="menu-subcategory-name">Haire Care</a>
           </li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/hair-styler" class="menu-childcategory-name">Hair Styler</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/conditioner" class="menu-childcategory-name">Conditioner</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/shampoo" class="menu-childcategory-name">Shampoo</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/haire-oil" class="menu-childcategory-name">Haire Oil</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/haire-color" class="menu-childcategory-name">Haire Color</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/haire-brush" class="menu-childcategory-name">Haire brush</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/hair-styler"
+              class="menu-childcategory-name">Hair Styler</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/conditioner"
+              class="menu-childcategory-name">Conditioner</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/shampoo"
+              class="menu-childcategory-name">Shampoo</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/haire-oil"
+              class="menu-childcategory-name">Haire Oil</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/haire-color"
+              class="menu-childcategory-name">Haire Color</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/haire-brush"
+              class="menu-childcategory-name">Haire brush</a></li>
 
           <li class="parent-subcategory">
             <a href="http://localhost/sell-pixer/subcategory/man%27s-care" class="menu-subcategory-name">Man's Care</a>
           </li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/body-and-skin-care" class="menu-childcategory-name">Body and Skin Care</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/hair-care" class="menu-childcategory-name">Hair Care</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/aftershave-&amp;-foam" class="menu-childcategory-name">Aftershave &amp; Foam</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/body-and-skin-care"
+              class="menu-childcategory-name">Body and Skin Care</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/hair-care"
+              class="menu-childcategory-name">Hair Care</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/aftershave-&amp;-foam"
+              class="menu-childcategory-name">Aftershave &amp; Foam</a></li>
 
           <li class="parent-subcategory">
             <a href="http://localhost/sell-pixer/subcategory/skin-care" class="menu-subcategory-name">Skin Care</a>
           </li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/body-lotion" class="menu-childcategory-name">Body Lotion</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/soap-&amp;-body-wash" class="menu-childcategory-name">Soap &amp; Body Wash</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/face-wash" class="menu-childcategory-name">Face Wash</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/cream" class="menu-childcategory-name">Cream</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/talcum-powder" class="menu-childcategory-name">Talcum Powder</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/face-mask-&amp;-packs" class="menu-childcategory-name">Face Mask &amp; Packs</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/body-lotion"
+              class="menu-childcategory-name">Body Lotion</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/soap-&amp;-body-wash"
+              class="menu-childcategory-name">Soap &amp; Body Wash</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/face-wash"
+              class="menu-childcategory-name">Face Wash</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/cream"
+              class="menu-childcategory-name">Cream</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/talcum-powder"
+              class="menu-childcategory-name">Talcum Powder</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/face-mask-&amp;-packs"
+              class="menu-childcategory-name">Face Mask &amp; Packs</a></li>
 
           <li class="parent-subcategory">
             <a href="http://localhost/sell-pixer/subcategory/makeup" class="menu-subcategory-name">Makeup</a>
           </li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/lips" class="menu-childcategory-name">Lips</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/face" class="menu-childcategory-name">Face</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/nails" class="menu-childcategory-name">Nails</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/makeup-palettes-&amp;-sets" class="menu-childcategory-name">Makeup Palettes &amp; Sets</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/makeup-removers" class="menu-childcategory-name">Makeup Removers</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/lips"
+              class="menu-childcategory-name">Lips</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/face"
+              class="menu-childcategory-name">Face</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/nails"
+              class="menu-childcategory-name">Nails</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/makeup-palettes-&amp;-sets"
+              class="menu-childcategory-name">Makeup Palettes &amp; Sets</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/makeup-removers"
+              class="menu-childcategory-name">Makeup Removers</a></li>
 
           <li class="parent-subcategory">
-            <a href="http://localhost/sell-pixer/subcategory/body-&amp;-massage-oils" class="menu-subcategory-name">Body &amp; Massage Oils</a>
+            <a href="http://localhost/sell-pixer/subcategory/body-&amp;-massage-oils" class="menu-subcategory-name">Body
+              &amp; Massage Oils</a>
           </li>
         </ul>
       </li>
       <li class="parent-category">
         <a href="http://localhost/sell-pixer/category/gadgets" class="menu-category-name">
-          <img src="http://localhost/sell-pixer/public/uploads/category/1729870905-gadgets.webp" alt="" class="side_cat_img" />
+          <img src="http://localhost/sell-pixer/public/uploads/category/1729870905-gadgets.webp" alt=""
+            class="side_cat_img" />
           Gadgets
         </a>
         <span class="menu-category-toggle">
@@ -248,42 +331,65 @@
           <li class="parent-subcategory">
             <a href="http://localhost/sell-pixer/subcategory/head-phones" class="menu-subcategory-name">Head Phones</a>
           </li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/mpod-earbuds" class="menu-childcategory-name">MPod Earbuds</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/tws-earbuds" class="menu-childcategory-name">TWS Earbuds</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/air-series" class="menu-childcategory-name">Air Series</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/earphone" class="menu-childcategory-name">Earphone</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/neckband" class="menu-childcategory-name">Neckband</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/mpod-earbuds"
+              class="menu-childcategory-name">MPod Earbuds</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/tws-earbuds"
+              class="menu-childcategory-name">TWS Earbuds</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/air-series"
+              class="menu-childcategory-name">Air Series</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/earphone"
+              class="menu-childcategory-name">Earphone</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/neckband"
+              class="menu-childcategory-name">Neckband</a></li>
 
           <li class="parent-subcategory">
-            <a href="http://localhost/sell-pixer/subcategory/mobile-accessories" class="menu-subcategory-name">Mobile Accessories</a>
+            <a href="http://localhost/sell-pixer/subcategory/mobile-accessories" class="menu-subcategory-name">Mobile
+              Accessories</a>
           </li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/smart-phone" class="menu-childcategory-name">Smart Phone</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/tablet" class="menu-childcategory-name">Tablet</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/adapter" class="menu-childcategory-name">Adapter</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/powerbank" class="menu-childcategory-name">Powerbank</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/cable" class="menu-childcategory-name">Cable</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/charger" class="menu-childcategory-name">Charger</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/smart-phone"
+              class="menu-childcategory-name">Smart Phone</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/tablet"
+              class="menu-childcategory-name">Tablet</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/adapter"
+              class="menu-childcategory-name">Adapter</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/powerbank"
+              class="menu-childcategory-name">Powerbank</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/cable"
+              class="menu-childcategory-name">Cable</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/charger"
+              class="menu-childcategory-name">Charger</a></li>
 
           <li class="parent-subcategory">
-            <a href="http://localhost/sell-pixer/subcategory/computer-accessories" class="menu-subcategory-name">Computer Accessories</a>
+            <a href="http://localhost/sell-pixer/subcategory/computer-accessories"
+              class="menu-subcategory-name">Computer Accessories</a>
           </li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/laptop" class="menu-childcategory-name">Laptop</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/desktop" class="menu-childcategory-name">Desktop</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/monitor" class="menu-childcategory-name">Monitor</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/keyboard" class="menu-childcategory-name">Keyboard</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/mouse" class="menu-childcategory-name">Mouse</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/portable-speaker" class="menu-childcategory-name">Portable Speaker</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/laptop"
+              class="menu-childcategory-name">Laptop</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/desktop"
+              class="menu-childcategory-name">Desktop</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/monitor"
+              class="menu-childcategory-name">Monitor</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/keyboard"
+              class="menu-childcategory-name">Keyboard</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/mouse"
+              class="menu-childcategory-name">Mouse</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/portable-speaker"
+              class="menu-childcategory-name">Portable Speaker</a></li>
 
           <li class="parent-subcategory">
-            <a href="http://localhost/sell-pixer/subcategory/speaker-microphone" class="menu-subcategory-name">Speaker/ Microphone</a>
+            <a href="http://localhost/sell-pixer/subcategory/speaker-microphone" class="menu-subcategory-name">Speaker/
+              Microphone</a>
           </li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/bluetooth-speaker" class="menu-childcategory-name">Bluetooth Speaker</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/smart-speaker" class="menu-childcategory-name">Smart Speaker</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/bluetooth-speaker"
+              class="menu-childcategory-name">Bluetooth Speaker</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/smart-speaker"
+              class="menu-childcategory-name">Smart Speaker</a></li>
         </ul>
       </li>
       <li class="parent-category">
         <a href="http://localhost/sell-pixer/category/grocery" class="menu-category-name">
-          <img src="http://localhost/sell-pixer/public/uploads/category/1729871263-grocery.webp" alt="" class="side_cat_img" />
+          <img src="http://localhost/sell-pixer/public/uploads/category/1729871263-grocery.webp" alt=""
+            class="side_cat_img" />
           Grocery
         </a>
         <span class="menu-category-toggle">
@@ -291,50 +397,76 @@
         </span>
         <ul class="second-nav" style="display: none;">
           <li class="parent-subcategory">
-            <a href="http://localhost/sell-pixer/subcategory/fruits,-meat-&amp;-frozen" class="menu-subcategory-name">Fruits, Meat &amp; Frozen</a>
+            <a href="http://localhost/sell-pixer/subcategory/fruits,-meat-&amp;-frozen"
+              class="menu-subcategory-name">Fruits, Meat &amp; Frozen</a>
           </li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/fruits" class="menu-childcategory-name">Fruits</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/vegetables" class="menu-childcategory-name">Vegetables</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/fish" class="menu-childcategory-name">Fish</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/meat" class="menu-childcategory-name">Meat</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/fruits"
+              class="menu-childcategory-name">Fruits</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/vegetables"
+              class="menu-childcategory-name">Vegetables</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/fish"
+              class="menu-childcategory-name">Fish</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/meat"
+              class="menu-childcategory-name">Meat</a></li>
 
           <li class="parent-subcategory">
-            <a href="http://localhost/sell-pixer/subcategory/snacks-&amp;-beverages" class="menu-subcategory-name">Snacks &amp; Beverages</a>
+            <a href="http://localhost/sell-pixer/subcategory/snacks-&amp;-beverages"
+              class="menu-subcategory-name">Snacks &amp; Beverages</a>
           </li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/noodles" class="menu-childcategory-name">Noodles</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/coffee" class="menu-childcategory-name">Coffee</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/dry-fruits" class="menu-childcategory-name">Dry Fruits</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/tea" class="menu-childcategory-name">Tea</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/cofee" class="menu-childcategory-name">Cofee</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/noodles"
+              class="menu-childcategory-name">Noodles</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/coffee"
+              class="menu-childcategory-name">Coffee</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/dry-fruits"
+              class="menu-childcategory-name">Dry Fruits</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/tea"
+              class="menu-childcategory-name">Tea</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/cofee"
+              class="menu-childcategory-name">Cofee</a></li>
 
           <li class="parent-subcategory">
-            <a href="http://localhost/sell-pixer/subcategory/dairy-&amp;-eggs" class="menu-subcategory-name">Dairy &amp; Eggs</a>
+            <a href="http://localhost/sell-pixer/subcategory/dairy-&amp;-eggs" class="menu-subcategory-name">Dairy &amp;
+              Eggs</a>
           </li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/uht-milk" class="menu-childcategory-name">UHT Milk</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/milk-powder" class="menu-childcategory-name">Milk Powder</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/milk-powder" class="menu-childcategory-name">Milk Powder</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/condensed-milk" class="menu-childcategory-name">Condensed Milk</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/uht-milk"
+              class="menu-childcategory-name">UHT Milk</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/milk-powder"
+              class="menu-childcategory-name">Milk Powder</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/milk-powder"
+              class="menu-childcategory-name">Milk Powder</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/condensed-milk"
+              class="menu-childcategory-name">Condensed Milk</a></li>
 
           <li class="parent-subcategory">
-            <a href="http://localhost/sell-pixer/subcategory/herbs,-spices-&amp;-sauces" class="menu-subcategory-name">Herbs, Spices &amp; Sauces</a>
+            <a href="http://localhost/sell-pixer/subcategory/herbs,-spices-&amp;-sauces"
+              class="menu-subcategory-name">Herbs, Spices &amp; Sauces</a>
           </li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/spices" class="menu-childcategory-name">Spices</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/cooking-sauce" class="menu-childcategory-name">Cooking Sauce</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/ready-mix" class="menu-childcategory-name">Ready Mix</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/shemai-&amp;-suji" class="menu-childcategory-name">Shemai &amp; Suji</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/spices"
+              class="menu-childcategory-name">Spices</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/cooking-sauce"
+              class="menu-childcategory-name">Cooking Sauce</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/ready-mix"
+              class="menu-childcategory-name">Ready Mix</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/shemai-&amp;-suji"
+              class="menu-childcategory-name">Shemai &amp; Suji</a></li>
 
           <li class="parent-subcategory">
             <a href="http://localhost/sell-pixer/subcategory/cooking" class="menu-subcategory-name">Cooking</a>
           </li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/rice" class="menu-childcategory-name">Rice</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/oil" class="menu-childcategory-name">Oil</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/salt" class="menu-childcategory-name">Salt</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/sugar" class="menu-childcategory-name">Sugar</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/rice"
+              class="menu-childcategory-name">Rice</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/oil"
+              class="menu-childcategory-name">Oil</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/salt"
+              class="menu-childcategory-name">Salt</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/sugar"
+              class="menu-childcategory-name">Sugar</a></li>
         </ul>
       </li>
       <li class="parent-category">
         <a href="http://localhost/sell-pixer/category/home-&amp;-lifestyle" class="menu-category-name">
-          <img src="http://localhost/sell-pixer/public/uploads/category/1729957138-home-lifestyle.webp" alt="" class="side_cat_img" />
+          <img src="http://localhost/sell-pixer/public/uploads/category/1729957138-home-lifestyle.webp" alt=""
+            class="side_cat_img" />
           Home &amp; Lifestyle
         </a>
         <span class="menu-category-toggle">
@@ -342,49 +474,71 @@
         </span>
         <ul class="second-nav" style="display: none;">
           <li class="parent-subcategory">
-            <a href="http://localhost/sell-pixer/subcategory/kitchen-&amp;-dining" class="menu-subcategory-name">Kitchen &amp; Dining</a>
+            <a href="http://localhost/sell-pixer/subcategory/kitchen-&amp;-dining" class="menu-subcategory-name">Kitchen
+              &amp; Dining</a>
           </li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/crockeries" class="menu-childcategory-name">Crockeries</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/rice-cooker" class="menu-childcategory-name">Rice Cooker</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/pressure-cooker" class="menu-childcategory-name">Pressure Cooker</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/cookware-set" class="menu-childcategory-name">Cookware-Set</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/blender-and-juice-maker" class="menu-childcategory-name">Blender and Juice Maker</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/crockeries"
+              class="menu-childcategory-name">Crockeries</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/rice-cooker"
+              class="menu-childcategory-name">Rice Cooker</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/pressure-cooker"
+              class="menu-childcategory-name">Pressure Cooker</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/cookware-set"
+              class="menu-childcategory-name">Cookware-Set</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/blender-and-juice-maker"
+              class="menu-childcategory-name">Blender and Juice Maker</a></li>
 
           <li class="parent-subcategory">
             <a href="http://localhost/sell-pixer/subcategory/cleaning" class="menu-subcategory-name">Cleaning</a>
           </li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/brooms,-mops-&amp;-sweepers" class="menu-childcategory-name">Brooms, Mops &amp; Sweepers</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/cleaning-buckets-&amp;-tubs" class="menu-childcategory-name">Cleaning Buckets &amp; Tubs</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/cleaning-gloves" class="menu-childcategory-name">Cleaning Gloves</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/brooms,-mops-&amp;-sweepers"
+              class="menu-childcategory-name">Brooms, Mops &amp; Sweepers</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/cleaning-buckets-&amp;-tubs"
+              class="menu-childcategory-name">Cleaning Buckets &amp; Tubs</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/cleaning-gloves"
+              class="menu-childcategory-name">Cleaning Gloves</a></li>
 
           <li class="parent-subcategory">
             <a href="http://localhost/sell-pixer/subcategory/bedding" class="menu-subcategory-name">Bedding</a>
           </li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/bedding-sets" class="menu-childcategory-name">Bedding Sets</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/bed-sheets" class="menu-childcategory-name">Bed Sheets</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/mattress-protectors" class="menu-childcategory-name">Mattress Protectors</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/electric-blankets" class="menu-childcategory-name">Electric Blankets</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/bedding-sets"
+              class="menu-childcategory-name">Bedding Sets</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/bed-sheets"
+              class="menu-childcategory-name">Bed Sheets</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/mattress-protectors"
+              class="menu-childcategory-name">Mattress Protectors</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/electric-blankets"
+              class="menu-childcategory-name">Electric Blankets</a></li>
 
           <li class="parent-subcategory">
             <a href="http://localhost/sell-pixer/subcategory/bath" class="menu-subcategory-name">Bath</a>
           </li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/bath-mats" class="menu-childcategory-name">Bath Mats</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/bath-towels" class="menu-childcategory-name">Bath Towels</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/bathrobes" class="menu-childcategory-name">Bathrobes</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/bathroom-mirrors" class="menu-childcategory-name">Bathroom Mirrors</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/bath-mats"
+              class="menu-childcategory-name">Bath Mats</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/bath-towels"
+              class="menu-childcategory-name">Bath Towels</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/bathrobes"
+              class="menu-childcategory-name">Bathrobes</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/bathroom-mirrors"
+              class="menu-childcategory-name">Bathroom Mirrors</a></li>
 
           <li class="parent-subcategory">
             <a href="http://localhost/sell-pixer/subcategory/furniture" class="menu-subcategory-name">Furniture</a>
           </li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/bedroom-furniture" class="menu-childcategory-name">Bedroom Furniture</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/kitchen-&amp;-dining-furniture" class="menu-childcategory-name">Kitchen &amp; Dining Furniture</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/living-room-furniture" class="menu-childcategory-name">Living Room Furniture</a></li>
-          <li class="childcategory"><a href="http://localhost/sell-pixer/products/home-office-furniture" class="menu-childcategory-name">Home Office Furniture</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/bedroom-furniture"
+              class="menu-childcategory-name">Bedroom Furniture</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/kitchen-&amp;-dining-furniture"
+              class="menu-childcategory-name">Kitchen &amp; Dining Furniture</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/living-room-furniture"
+              class="menu-childcategory-name">Living Room Furniture</a></li>
+          <li class="childcategory"><a href="http://localhost/sell-pixer/products/home-office-furniture"
+              class="menu-childcategory-name">Home Office Furniture</a></li>
         </ul>
       </li>
       <li class="parent-category">
         <a href="http://localhost/sell-pixer/category/eid-collection" class="menu-category-name">
-          <img src="http://localhost/sell-pixer/public/uploads/category/1740459837-eid-collection.webp" alt="" class="side_cat_img" />
+          <img src="http://localhost/sell-pixer/public/uploads/category/1740459837-eid-collection.webp" alt=""
+            class="side_cat_img" />
           Eid Collection
         </a>
         <span class="menu-category-toggle">
@@ -433,7 +587,8 @@
           </a>
         </div>
         <div class="menu-logo">
-          <a href="http://localhost/sell-pixer"><img src="{{ asset($generalsetting->dark_logo) }}" alt="" /></a>
+          <a href="http://localhost/sell-pixer"><img src="{{ asset('public/' . $generalsetting->dark_logo) }}"
+              alt="" /></a>
         </div>
         <div class="menu-bag">
           <a href="http://localhost/sell-pixer/customer/checkout" class="margin-shopping">
@@ -446,7 +601,9 @@
     <div class="mobile-search main-search">
       <form action="http://localhost/sell-pixer/search">
         <button>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-search">
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
@@ -465,17 +622,21 @@
             <div class="col-sm-12">
               <div class="logo-header">
                 <div class="main-logo">
-                  <a href="http://localhost/sell-pixer"><img src="{{ asset($generalsetting->dark_logo) }}" alt="" /></a>
+                  <a href="http://localhost/sell-pixer"><img src="{{ asset('public/' . $generalsetting->dark_logo) }}"
+                      alt="" /></a>
                 </div>
                 <div class="main-search">
                   <form action="http://localhost/sell-pixer/search">
                     <button>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-search">
                         <circle cx="11" cy="11" r="8"></circle>
                         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                       </svg>
                     </button>
-                    <input type="text" placeholder="Search Product..." class="msearch_keyword msearch_click" name="keyword" />
+                    <input type="text" placeholder="Search Product..." class="msearch_keyword msearch_click"
+                      name="keyword" />
                   </form>
                   <div class="search_result"></div>
                 </div>
@@ -887,7 +1048,8 @@
                           <a href="http://localhost/sell-pixer/products/nails">Nails</a>
                         </li>
                         <li>
-                          <a href="http://localhost/sell-pixer/products/makeup-palettes-&amp;-sets">Makeup Palettes &amp; Sets</a>
+                          <a href="http://localhost/sell-pixer/products/makeup-palettes-&amp;-sets">Makeup Palettes
+                            &amp; Sets</a>
                         </li>
                         <li>
                           <a href="http://localhost/sell-pixer/products/makeup-removers">Makeup Removers</a>
@@ -1063,7 +1225,8 @@
                       </ul>
                       <ul>
                         <li>
-                          <a href="http://localhost/sell-pixer/subcategory/herbs,-spices-&amp;-sauces" class="cat-title">
+                          <a href="http://localhost/sell-pixer/subcategory/herbs,-spices-&amp;-sauces"
+                            class="cat-title">
                             Herbs, Spices &amp; Sauces
                           </a>
                         </li>
@@ -1126,7 +1289,8 @@
                           <a href="http://localhost/sell-pixer/products/cookware-set">Cookware-Set</a>
                         </li>
                         <li>
-                          <a href="http://localhost/sell-pixer/products/blender-and-juice-maker">Blender and Juice Maker</a>
+                          <a href="http://localhost/sell-pixer/products/blender-and-juice-maker">Blender and Juice
+                            Maker</a>
                         </li>
                       </ul>
                       <ul>
@@ -1136,10 +1300,12 @@
                           </a>
                         </li>
                         <li>
-                          <a href="http://localhost/sell-pixer/products/brooms,-mops-&amp;-sweepers">Brooms, Mops &amp; Sweepers</a>
+                          <a href="http://localhost/sell-pixer/products/brooms,-mops-&amp;-sweepers">Brooms, Mops &amp;
+                            Sweepers</a>
                         </li>
                         <li>
-                          <a href="http://localhost/sell-pixer/products/cleaning-buckets-&amp;-tubs">Cleaning Buckets &amp; Tubs</a>
+                          <a href="http://localhost/sell-pixer/products/cleaning-buckets-&amp;-tubs">Cleaning Buckets
+                            &amp; Tubs</a>
                         </li>
                         <li>
                           <a href="http://localhost/sell-pixer/products/cleaning-gloves">Cleaning Gloves</a>
@@ -1193,7 +1359,8 @@
                           <a href="http://localhost/sell-pixer/products/bedroom-furniture">Bedroom Furniture</a>
                         </li>
                         <li>
-                          <a href="http://localhost/sell-pixer/products/kitchen-&amp;-dining-furniture">Kitchen &amp; Dining Furniture</a>
+                          <a href="http://localhost/sell-pixer/products/kitchen-&amp;-dining-furniture">Kitchen &amp;
+                            Dining Furniture</a>
                         </li>
                         <li>
                           <a href="http://localhost/sell-pixer/products/living-room-furniture">Living Room Furniture</a>
@@ -1268,7 +1435,7 @@
           <div class="col-sm-4">
             <div class="footer-about">
               <a href="http://localhost/sell-pixer">
-                <img src="{{ asset($generalsetting->dark_logo) }}" alt="" />
+                <img src="{{ asset('public/' . $generalsetting->dark_logo) }}" alt="" />
               </a>
               <p>Dinajpur City College, Balubari, Dinajpur</p>
               <p><a href="tel:01766950986" class="footer-hotlint">01766950986</a></p>
@@ -1280,7 +1447,8 @@
             <div class="footer-menu">
               <ul>
                 <li class="title"><a>Useful Link</a></li>
-                <li><a href="http://localhost/sell-pixer/page/refund-&amp;-return-policy">Refund &amp; Return Policy</a></li>
+                <li><a href="http://localhost/sell-pixer/page/refund-&amp;-return-policy">Refund &amp; Return Policy</a>
+                </li>
                 <li><a href="http://localhost/sell-pixer/page/terms-&amp;-conditions">Terms &amp; Conditions</a></li>
                 <li><a href="http://localhost/sell-pixer/page/privacy-policy">Privacy Policy</a></li>
               </ul>
@@ -1305,17 +1473,13 @@
               <ul>
                 <li class="title text-center"><a>Follow Us</a></li>
               </ul>
-              <ul class="social_link">
+                    <ul class="social_link">
+                      @foreach ($socialicons as $value)
                 <li>
-                  <a href="https://www.facebook.com/websolutionit08/"><i class="fab fa-facebook-f"></i></a>
+                  <a href="{{ $value->link }}"><i class="{{ $value->icon }}"></i></a>
                 </li>
-                <li>
-                  <a href="mailto:info@websolution.com"><i class="fab fa-google"></i></a>
-                </li>
-                <li>
-                  <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                </li>
-              </ul>
+              @endforeach
+                    </ul>
               <ul>
                 <li class="title text-center mb-0"><a class="mb-0">Delivery Partner</a></li>
                 <li class="delivery-partner">
@@ -1333,7 +1497,8 @@
         <div class="row">
           <div class="col-sm-12">
             <div class="copyright">
-              <p>Copyright © 2025 Sell Pixer. All rights reserved. Developed By <a href="https://websolutionit.com">Websolution IT</a></p>
+              <p>Copyright © 2025 Sell Pixer. All rights reserved. Developed By <a
+                  href="https://websolutionit.com">Websolution IT</a></p>
             </div>
           </div>
         </div>
@@ -1342,7 +1507,8 @@
   </footer>
   <!--=====-->
   <div class="fixed_whats">
-    <a href="https://api.whatsapp.com/send?phone=8801766950986" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="https://api.whatsapp.com/send?phone=8801766950986" target="_blank"><i
+        class="fa-brands fa-whatsapp"></i></a>
   </div>
 
   <div class="scrolltop" style="display: none;">
@@ -1915,7 +2081,8 @@
   <script src="http://localhost/sell-pixer/public/frontEnd/js/owl.carousel.min.js"></script>
 
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHQVQ3N5" height="0" width="0" style="display: none; visibility: hidden;"></iframe></noscript>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHQVQ3N5" height="0" width="0"
+      style="display: none; visibility: hidden;"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
   <script>
