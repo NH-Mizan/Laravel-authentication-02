@@ -1437,9 +1437,11 @@
               <a href="http://localhost/sell-pixer">
                 <img src="{{ asset('public/' . $generalsetting->dark_logo) }}" alt="" />
               </a>
-              <p>Dinajpur City College, Balubari, Dinajpur</p>
-              <p><a href="tel:01766950986" class="footer-hotlint">01766950986</a></p>
-              <p><a href="mailto:info@websolutionit.com" class="footer-hotlint">info@websolutionit.com</a></p>
+               <p>{{ $contact->address }}</p>
+                            <p><a href="tel:{{ $contact->hotline }}"
+                                    class="footer-hotlint">{{ $contact->hotline }}</a></p>
+                            <p><a href="mailto:{{ $contact->hotmail }}"
+                                    class="footer-hotlint">{{ $contact->hotmail }}</a></p>
             </div>
           </div>
           <!-- col end -->

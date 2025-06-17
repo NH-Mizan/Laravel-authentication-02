@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Contact;
 use App\Models\GeneralSetting;
 use App\Models\SocialMedia;
 use Cache;
@@ -31,10 +32,15 @@ class AppServiceProvider extends ServiceProvider
              $socialicons = Cache::remember('socialicons', now()->addDays(7), function () {
                 return SocialMedia::where('status', 1)->get();
             });
+              $contact = Cache::remember('contact', now()->addDays(7), function () {
+                return Contact::where('status', 1)->first();
+            });
+
 
             $view->with([
             'generalsetting' => $generalsetting,
             'socialicons' => $socialicons,
+            'contact' => $contact,
             ]);
 
          });
