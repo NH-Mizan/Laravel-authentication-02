@@ -25,49 +25,58 @@ class GeneralSettingController extends Controller
     }
 
     // data store
-    public function store(Request $request)
-    {
-        $this->validate($request, [
-            'name' => 'required',
-            'white_logo' => 'required|image',
-            'dark_logo' => 'required|image',
-            'favicon' => 'required|image',
-            'status' => 'required',
-        ]);
+  public function store(Request $request)
+{
+    $this->validate($request, [
+        'name' => 'required',
+        'white_logo' => 'required|image',
+        'dark_logo' => 'required|image',
+        'favicon' => 'required|image',
+        'status' => 'required',
+    ]);
 
-        $manager = new ImageManager(new Driver());
-        $uploadPath = 'uploads/settings/';
+    $manager = new ImageManager(new Driver());
+    $uploadPath = 'uploads/settings/';
 
-        // Folder create if not exist
-        if (!file_exists(public_path($uploadPath))) {
-            mkdir(public_path($uploadPath), 0755, true);
-        }
-
-        // Helper Function for image processing
-        function processImage($image, $manager, $uploadPath)
-        {
-            $name = time() . '-' . Str::slug(pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME)) . '.webp';
-            $imageUrl = $uploadPath . $name;
-           
-            $img->height() > $img->width() ? $width = null : $height = null;
-            $img->resize($width ?? 100, $height ?? 100); // fallback size
-            $img->toWebp(90)->save(public_path($imageUrl));
-            return $imageUrl;
-        }
-
-        $imageUrl1 = processImage($request->file('white_logo'), $manager, $uploadPath);
-        $imageUrl2 = processImage($request->file('dark_logo'), $manager, $uploadPath);
-        $imageUrl3 = processImage($request->file('favicon'), $manager, $uploadPath);
-
-        $input = $request->all();
-        $input['white_logo'] = $imageUrl1;
-        $input['dark_logo'] = $imageUrl2;
-        $input['favicon'] = $imageUrl3;
-
-        GeneralSetting::create($input);
-        Toastr::success('Success', 'Data insert successfully');
-        return redirect()->route('settings.index');
+    // Folder create if not exist
+    if (!file_exists(public_path($uploadPath))) {
+        mkdir(public_path($uploadPath), 0755, true);
     }
+
+    // Helper Function for image processing
+    $processImage = function ($image, $manager, $uploadPath) {
+        $name = time() . '-' . Str::slug(pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME)) . '.webp';
+        $imageUrl = $uploadPath . $name;
+
+        $img = $manager->read($image->getRealPath());
+        $width = 100;
+        $height = 100;
+        if ($img->height() > $img->width()) {
+            $width = null;
+        } else {
+            $height = null;
+        }
+
+        $img->resize($width ?? 100, $height ?? 100);
+        $img->toWebp(90)->save(public_path($imageUrl));
+        return $imageUrl;
+    };
+
+    // Process each image
+    $imageUrl1 = $processImage($request->file('white_logo'), $manager, $uploadPath);
+    $imageUrl2 = $processImage($request->file('dark_logo'), $manager, $uploadPath);
+    $imageUrl3 = $processImage($request->file('favicon'), $manager, $uploadPath);
+
+    $input = $request->all();
+    $input['white_logo'] = $imageUrl1;
+    $input['dark_logo'] = $imageUrl2;
+    $input['favicon'] = $imageUrl3;
+
+    GeneralSetting::create($input);
+    Toastr::success('Success', 'Data insert successfully');
+    return redirect()->route('settings.index');
+}
+
 
     // Edit data
     public function edit($id)
