@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\admin\BannerCategoryController;
 use App\Http\Controllers\admin\BannerController;
+use App\Http\Controllers\admin\BrandController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\ChildcategoryController;
 use App\Http\Controllers\admin\ContactController;
@@ -34,6 +35,7 @@ Auth::routes();
 
 Route::group(['namespace' => 'Frontend'], function () {
     Route::get('/', [FrontendController::class, 'index'])->name('home');
+    Route::get('brand/{slug}', [FrontendController::class, 'brand'])->name('brand');
 });
 
 
@@ -141,5 +143,17 @@ Route::group(['namespace' => 'Admin',  'prefix' => 'admin', 'middleware' => ['au
     Route::post('childcategories/inactive', [ChildcategoryController::class, 'inactive'])->name('childcategories.inactive');
     Route::post('childcategories/active', [ChildcategoryController::class, 'active'])->name('childcategories.active');
     Route::post('childcategories/destroy', [ChildcategoryController::class, 'destroy'])->name('childcategories.destroy');
+
+
+    // Brands
+    Route::get('brands/manage', [BrandController::class, 'index'])->name('brands.index');
+    Route::get('brands/{id}/show', [BrandController::class, 'show'])->name('brands.show');
+    Route::get('brands/create', [BrandController::class, 'create'])->name('brands.create');
+    Route::post('brands/save', [BrandController::class, 'store'])->name('brands.store');
+    Route::get('brands/{id}/edit', [BrandController::class, 'edit'])->name('brands.edit');
+    Route::post('brands/update', [BrandController::class, 'update'])->name('brands.update');
+    Route::post('brands/inactive', [BrandController::class, 'inactive'])->name('brands.inactive');
+    Route::post('brands/active', [BrandController::class, 'active'])->name('brands.active');
+    Route::post('brands/destroy', [BrandController::class, 'destroy'])->name('brands.destroy');
 
 });

@@ -3863,152 +3863,25 @@
       </div>
     </section>
 
-    <div class="home-category mt-4">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="category-title">
-              <h3>Brands</h3>
-            </div>
-            <div class="category-slider owl-carousel owl-loaded owl-drag">
-              <div class="owl-stage-outer">
-                <div class="owl-stage" style="transform: translate3d(-1531px, 0px, 0px); transition: 0.25s; width: 3063px;">
-                  <div class="owl-item cloned" style="width: 155.143px; margin-right: 15px;">
-                    <div class="brand-item">
-                      <a href="http://localhost/sell-pixer/brand/veja">
-                        <img src="http://localhost/sell-pixer/public/uploads/brand/1730127739-bata.webp" alt="" />
-                      </a>
+   <div class="home-category mt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="category-title">
+                        <h3>Brands</h3>
                     </div>
-                  </div>
-                  <div class="owl-item cloned" style="width: 155.143px; margin-right: 15px;">
-                    <div class="brand-item">
-                      <a href="http://localhost/sell-pixer/brand/ielgy">
-                        <img src="http://localhost/sell-pixer/public/uploads/brand/1730175336-ielgy.webp" alt="" />
-                      </a>
+                    <div class="category-slider owl-carousel">
+                        @foreach($brands as $key=>$value)
+                        <div class="brand-item">
+                            <a href="{{route('brand',$value->slug)}}">
+                                <img src="{{asset('public/'.$value->image)}}" alt="">
+                            </a>
+                        </div>
+                        @endforeach
                     </div>
-                  </div>
-                  <div class="owl-item cloned" style="width: 155.143px; margin-right: 15px;">
-                    <div class="brand-item">
-                      <a href="http://localhost/sell-pixer/brand/choctech">
-                        <img src="http://localhost/sell-pixer/public/uploads/brand/1730303474-choetech.webp" alt="" />
-                      </a>
-                    </div>
-                  </div>
-                  <div class="owl-item cloned" style="width: 155.143px; margin-right: 15px;">
-                    <div class="brand-item">
-                      <a href="http://localhost/sell-pixer/brand/easy">
-                        <img src="http://localhost/sell-pixer/public/uploads/brand/1730008604-easy-brands.webp" alt="" />
-                      </a>
-                    </div>
-                  </div>
-                  <div class="owl-item cloned" style="width: 155.143px; margin-right: 15px;">
-                    <div class="brand-item">
-                      <a href="http://localhost/sell-pixer/brand/veja">
-                        <img src="http://localhost/sell-pixer/public/uploads/brand/1730127739-bata.webp" alt="" />
-                      </a>
-                    </div>
-                  </div>
-                  <div class="owl-item cloned" style="width: 155.143px; margin-right: 15px;">
-                    <div class="brand-item">
-                      <a href="http://localhost/sell-pixer/brand/ielgy">
-                        <img src="http://localhost/sell-pixer/public/uploads/brand/1730175336-ielgy.webp" alt="" />
-                      </a>
-                    </div>
-                  </div>
-                  <div class="owl-item cloned" style="width: 155.143px; margin-right: 15px;">
-                    <div class="brand-item">
-                      <a href="http://localhost/sell-pixer/brand/choctech">
-                        <img src="http://localhost/sell-pixer/public/uploads/brand/1730303474-choetech.webp" alt="" />
-                      </a>
-                    </div>
-                  </div>
-                  <div class="owl-item" style="width: 155.143px; margin-right: 15px;">
-                    <div class="brand-item">
-                      <a href="http://localhost/sell-pixer/brand/easy">
-                        <img src="http://localhost/sell-pixer/public/uploads/brand/1730008604-easy-brands.webp" alt="" />
-                      </a>
-                    </div>
-                  </div>
-                  <div class="owl-item" style="width: 155.143px; margin-right: 15px;">
-                    <div class="brand-item">
-                      <a href="http://localhost/sell-pixer/brand/veja">
-                        <img src="http://localhost/sell-pixer/public/uploads/brand/1730127739-bata.webp" alt="" />
-                      </a>
-                    </div>
-                  </div>
-                  <div class="owl-item active" style="width: 155.143px; margin-right: 15px;">
-                    <div class="brand-item">
-                      <a href="http://localhost/sell-pixer/brand/ielgy">
-                        <img src="http://localhost/sell-pixer/public/uploads/brand/1730175336-ielgy.webp" alt="" />
-                      </a>
-                    </div>
-                  </div>
-                  <div class="owl-item active" style="width: 155.143px; margin-right: 15px;">
-                    <div class="brand-item">
-                      <a href="http://localhost/sell-pixer/brand/choctech">
-                        <img src="http://localhost/sell-pixer/public/uploads/brand/1730303474-choetech.webp" alt="" />
-                      </a>
-                    </div>
-                  </div>
-                  <div class="owl-item cloned active" style="width: 155.143px; margin-right: 15px;">
-                    <div class="brand-item">
-                      <a href="http://localhost/sell-pixer/brand/easy">
-                        <img src="http://localhost/sell-pixer/public/uploads/brand/1730008604-easy-brands.webp" alt="" />
-                      </a>
-                    </div>
-                  </div>
-                  <div class="owl-item cloned active" style="width: 155.143px; margin-right: 15px;">
-                    <div class="brand-item">
-                      <a href="http://localhost/sell-pixer/brand/veja">
-                        <img src="http://localhost/sell-pixer/public/uploads/brand/1730127739-bata.webp" alt="" />
-                      </a>
-                    </div>
-                  </div>
-                  <div class="owl-item cloned active" style="width: 155.143px; margin-right: 15px;">
-                    <div class="brand-item">
-                      <a href="http://localhost/sell-pixer/brand/ielgy">
-                        <img src="http://localhost/sell-pixer/public/uploads/brand/1730175336-ielgy.webp" alt="" />
-                      </a>
-                    </div>
-                  </div>
-                  <div class="owl-item cloned active" style="width: 155.143px; margin-right: 15px;">
-                    <div class="brand-item">
-                      <a href="http://localhost/sell-pixer/brand/choctech">
-                        <img src="http://localhost/sell-pixer/public/uploads/brand/1730303474-choetech.webp" alt="" />
-                      </a>
-                    </div>
-                  </div>
-                  <div class="owl-item cloned active" style="width: 155.143px; margin-right: 15px;">
-                    <div class="brand-item">
-                      <a href="http://localhost/sell-pixer/brand/easy">
-                        <img src="http://localhost/sell-pixer/public/uploads/brand/1730008604-easy-brands.webp" alt="" />
-                      </a>
-                    </div>
-                  </div>
-                  <div class="owl-item cloned" style="width: 155.143px; margin-right: 15px;">
-                    <div class="brand-item">
-                      <a href="http://localhost/sell-pixer/brand/veja">
-                        <img src="http://localhost/sell-pixer/public/uploads/brand/1730127739-bata.webp" alt="" />
-                      </a>
-                    </div>
-                  </div>
-                  <div class="owl-item cloned" style="width: 155.143px; margin-right: 15px;">
-                    <div class="brand-item">
-                      <a href="http://localhost/sell-pixer/brand/ielgy">
-                        <img src="http://localhost/sell-pixer/public/uploads/brand/1730175336-ielgy.webp" alt="" />
-                      </a>
-                    </div>
-                  </div>
                 </div>
-              </div>
-              <div class="owl-nav disabled">
-                <button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button>
-              </div>
-              <div class="owl-dots disabled"></div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
 
     <div class="footer-gap"></div>

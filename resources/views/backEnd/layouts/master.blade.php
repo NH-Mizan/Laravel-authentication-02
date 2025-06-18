@@ -250,7 +250,7 @@
                                                 data-feather="minus"></i> Childcategories</a>
                                     </li>
                                     <li>
-                                        <a href=""><i data-feather="minus"></i>
+                                        <a href="{{ route('brands.index') }}"><i data-feather="minus"></i>
                                             Brands</a>
                                     </li>
                                     <li>
