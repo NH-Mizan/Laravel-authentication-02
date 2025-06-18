@@ -254,7 +254,7 @@
                                             Brands</a>
                                     </li>
                                     <li>
-                                        <a href=""><i data-feather="minus"></i>
+                                        <a href="{{ route('colors.index') }}"><i data-feather="minus"></i>
                                             Colors</a>
                                     </li>
                                     <li>
