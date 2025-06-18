@@ -20,7 +20,6 @@ return new class extends Migration
             $table->integer('subcategory_id')->index();
             $table->string('meta_title')->nullable();
             $table->text('meta_description')->nullable();
-            $table->foreignId('subcategory_id')->constrained()->onDelete('cascade');
             $table->tinyInteger('status');
             $table->timestamps();
         });
