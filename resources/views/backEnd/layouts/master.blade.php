@@ -224,6 +224,56 @@
                             </a>
                         </li>
 
+                         <!-- nav items -->
+                        <li>
+                            <a href="#siebar-product" data-bs-toggle="collapse">
+                                <i data-feather="database"></i>
+                                <span> Products </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="siebar-product">
+                                <ul class="nav-second-level">
+                                    <li>
+                                        <a href=""><i data-feather="minus"></i>
+                                            Product Manage</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('categories.index') }}"><i data-feather="minus"></i>
+                                            Categories</a>
+                                    </li>
+                                    <li>
+                                        <a href=""><i data-feather="minus"></i>
+                                            Subcategories</a>
+                                    </li>
+                                    <li>
+                                        <a href=""><i
+                                                data-feather="minus"></i> Childcategories</a>
+                                    </li>
+                                    <li>
+                                        <a href=""><i data-feather="minus"></i>
+                                            Brands</a>
+                                    </li>
+                                    <li>
+                                        <a href=""><i data-feather="minus"></i>
+                                            Colors</a>
+                                    </li>
+                                    <li>
+                                        <a href=""><i data-feather="minus"></i>
+                                            Sizes</a>
+                                    </li>
+                                    <li>
+                                        <a href=""><i data-feather="minus"></i>
+                                            Barcode</a>
+                                    </li>
+                                    <li>
+                                        <a href=""><i data-feather="minus"></i>Reviews</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- nav items end -->
+
 
                         <li>
                             <a href="#sidebar-users" data-bs-toggle="collapse">

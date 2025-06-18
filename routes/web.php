@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\admin\BannerCategoryController;
 use App\Http\Controllers\admin\BannerController;
+use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\ContactController;
 use App\Http\Controllers\admin\GeneralSettingController;
 use App\Http\Controllers\admin\SocialMediaController;
@@ -101,4 +102,17 @@ Route::group(['namespace' => 'Admin',  'prefix' => 'admin', 'middleware' => ['au
     Route::post('banner/inactive', [BannerController::class, 'inactive'])->name('banners.inactive');
     Route::post('banner/active', [BannerController::class, 'active'])->name('banners.active');
     Route::post('banner/destroy', [BannerController::class, 'destroy'])->name('banners.destroy');
+
+
+
+      // categories
+    Route::get('categories/manage', [CategoryController::class, 'index'])->name('categories.index');
+    Route::get('categories/{id}/show', [CategoryController::class, 'show'])->name('categories.show');
+    Route::get('categories/create', [CategoryController::class, 'create'])->name('categories.create');
+    Route::post('categories/save', [CategoryController::class, 'store'])->name('categories.store');
+    Route::get('categories/{id}/edit', [CategoryController::class, 'edit'])->name('categories.edit');
+    Route::post('categories/update', [CategoryController::class, 'update'])->name('categories.update');
+    Route::post('categories/inactive', [CategoryController::class, 'inactive'])->name('categories.inactive');
+    Route::post('categories/active', [CategoryController::class, 'active'])->name('categories.active');
+    Route::post('categories/destroy', [CategoryController::class, 'destroy'])->name('categories.destroy');
 });
