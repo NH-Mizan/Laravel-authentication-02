@@ -258,7 +258,7 @@
                                             Colors</a>
                                     </li>
                                     <li>
-                                        <a href=""><i data-feather="minus"></i>
+                                        <a href="{{ route('sizes.index') }}"><i data-feather="minus"></i>
                                             Sizes</a>
                                     </li>
                                     <li>

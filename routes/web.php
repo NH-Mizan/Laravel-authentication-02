@@ -7,6 +7,7 @@ use App\Http\Controllers\admin\ChildcategoryController;
 use App\Http\Controllers\admin\ColorController;
 use App\Http\Controllers\admin\ContactController;
 use App\Http\Controllers\admin\GeneralSettingController;
+use App\Http\Controllers\admin\SizeController;
 use App\Http\Controllers\admin\SocialMediaController;
 use App\Http\Controllers\admin\SubcategoryController;
 use Illuminate\Support\Facades\Route;
@@ -163,6 +164,17 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['aut
   Route::post('color/inactive', [ColorController::class, 'inactive'])->name('colors.inactive');
   Route::post('color/active', [ColorController::class, 'active'])->name('colors.active');
   Route::post('color/destroy', [ColorController::class, 'destroy'])->name('colors.destroy');
+
+  
+    // size
+    Route::get('size/manage', [SizeController::class, 'index'])->name('sizes.index');
+    Route::get('size/create', [SizeController::class, 'create'])->name('sizes.create');
+    Route::post('size/save', [SizeController::class, 'store'])->name('sizes.store');
+    Route::get('size/{id}/edit', [SizeController::class, 'edit'])->name('sizes.edit');
+    Route::post('size/update', [SizeController::class, 'update'])->name('sizes.update');
+    Route::post('size/inactive', [SizeController::class, 'inactive'])->name('sizes.inactive');
+    Route::post('size/active', [SizeController::class, 'active'])->name('sizes.active');
+    Route::post('size/destroy', [SizeController::class, 'destroy'])->name('sizes.destroy');
 
 
 });
