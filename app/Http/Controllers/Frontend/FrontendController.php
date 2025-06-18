@@ -19,7 +19,15 @@ class FrontendController extends Controller
             ->select('id', 'image', 'link')
             ->limit(2)
             ->get();
-        return view('frontend.layouts.pages.index', compact('sliders', 'sliderrightads'));
+
+            $homecategory = Category::where(['front_view' => 1, 'status' => 1])
+            ->select('id', 'name', 'slug', 'front_view', 'status')
+            ->orderBy('id', 'ASC')
+            ->get();
+
+        return view('frontend.layouts.pages.index', compact('sliders', 'sliderrightads', 'homecategory'));
+
+        
     }
    
 }
