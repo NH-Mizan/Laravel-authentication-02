@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('image')->nullable();
             $table->string('meta_title')->nullable();
             $table->text('meta_decription')->nullable();
-            $table->foreignId('category_id')->constrained()->onDelete('cascade');
+    
             $table->tinyInteger('status');
             $table->timestamps();
         });

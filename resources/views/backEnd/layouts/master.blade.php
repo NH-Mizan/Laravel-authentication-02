@@ -242,7 +242,7 @@
                                             Categories</a>
                                     </li>
                                     <li>
-                                        <a href=""><i data-feather="minus"></i>
+                                        <a href="{{ route('subcategories.index') }}"><i data-feather="minus"></i>
                                             Subcategories</a>
                                     </li>
                                     <li>

@@ -5,6 +5,7 @@ use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\ContactController;
 use App\Http\Controllers\admin\GeneralSettingController;
 use App\Http\Controllers\admin\SocialMediaController;
+use App\Http\Controllers\admin\SubcategoryController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Admin\DashboardController;
@@ -115,4 +116,29 @@ Route::group(['namespace' => 'Admin',  'prefix' => 'admin', 'middleware' => ['au
     Route::post('categories/inactive', [CategoryController::class, 'inactive'])->name('categories.inactive');
     Route::post('categories/active', [CategoryController::class, 'active'])->name('categories.active');
     Route::post('categories/destroy', [CategoryController::class, 'destroy'])->name('categories.destroy');
+
+
+
+     Route::get('subcategories/manage', [SubcategoryController::class, 'index'])->name('subcategories.index');
+    Route::get('subcategories/{id}/show', [SubcategoryController::class, 'show'])->name('subcategories.show');
+    Route::get('subcategories/create', [SubcategoryController::class, 'create'])->name('subcategories.create');
+    Route::post('subcategories/save', [SubcategoryController::class, 'store'])->name('subcategories.store');
+    Route::get('subcategories/{id}/edit', [SubcategoryController::class, 'edit'])->name('subcategories.edit');
+    Route::post('subcategories/update', [SubcategoryController::class, 'update'])->name('subcategories.update');
+    Route::post('subcategories/inactive', [SubcategoryController::class, 'inactive'])->name('subcategories.inactive');
+    Route::post('subcategories/active', [SubcategoryController::class, 'active'])->name('subcategories.active');
+    Route::post('subcategories/destroy', [SubcategoryController::class, 'destroy'])->name('subcategories.destroy');
+
+
+      // Childcategories
+    Route::get('childcategories/manage', [ChildcategoryController::class, 'index'])->name('childcategories.index');
+    Route::get('childcategories/{id}/show', [ChildcategoryController::class, 'show'])->name('childcategories.show');
+    Route::get('childcategories/create', [ChildcategoryController::class, 'create'])->name('childcategories.create');
+    Route::post('childcategories/save', [ChildcategoryController::class, 'store'])->name('childcategories.store');
+    Route::get('childcategories/{id}/edit', [ChildcategoryController::class, 'edit'])->name('childcategories.edit');
+    Route::post('childcategories/update', [ChildcategoryController::class, 'update'])->name('childcategories.update');
+    Route::post('childcategories/inactive', [ChildcategoryController::class, 'inactive'])->name('childcategories.inactive');
+    Route::post('childcategories/active', [ChildcategoryController::class, 'active'])->name('childcategories.active');
+    Route::post('childcategories/destroy', [ChildcategoryController::class, 'destroy'])->name('childcategories.destroy');
+
 });
