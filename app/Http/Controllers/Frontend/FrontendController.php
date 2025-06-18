@@ -15,7 +15,7 @@ class FrontendController extends Controller
             ->select('id', 'image', 'link')
             ->get();
 
-        $sliderrightads = Banner::where(['status' => 1, 'category_id' =>  ])
+        $sliderrightads = Banner::where(['status' => 1, 'category_id' => 2  ])
             ->select('id', 'image', 'link')
             ->limit(2)
             ->get();
