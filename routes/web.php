@@ -2,6 +2,7 @@
 use App\Http\Controllers\admin\BannerCategoryController;
 use App\Http\Controllers\admin\BannerController;
 use App\Http\Controllers\admin\CategoryController;
+use App\Http\Controllers\admin\ChildcategoryController;
 use App\Http\Controllers\admin\ContactController;
 use App\Http\Controllers\admin\GeneralSettingController;
 use App\Http\Controllers\admin\SocialMediaController;
