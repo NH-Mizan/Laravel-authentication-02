@@ -49,8 +49,8 @@ class GeneralSettingController extends Controller
         $imageUrl = $uploadPath . $name;
 
         $img = $manager->read($image->getRealPath());
-        $width = 100;
-        $height = 100;
+        $width = '';
+        $height = '';
         if ($img->height() > $img->width()) {
             $width = null;
         } else {
@@ -108,8 +108,7 @@ class GeneralSettingController extends Controller
             $name = time() . '-' . Str::slug(pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME)) . '.webp';
             $imageUrl = $uploadPath . $name;
             $img = $manager->read($image->getRealPath());
-            $img->height() > $img->width() ? $width = null : $height = null;
-            $img->resize($width ?? 100, $height ?? 100); // fallback size
+            $img->height() > $img->width() ? $width = null : $height = null; 
             $img->toWebp(90)->save(public_path($imageUrl));
             return $imageUrl;
         }
