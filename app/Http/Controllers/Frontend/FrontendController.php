@@ -33,9 +33,21 @@ class FrontendController extends Controller
             ->get();
 
 
+
         return view('frontend.layouts.pages.index', compact('sliders', 'sliderrightads', 'homecategory', 'brands'));
 
         
     }
+    
+    public function category($slug, Request $request)
+    {
+        $category = Category::where(['slug'=> $slug, 'status'=> 1])-> first();
+
+         return view('frontEnd.layouts.pages.category', compact('category', ));
+            
+    }
+    
+            
+
    
 }

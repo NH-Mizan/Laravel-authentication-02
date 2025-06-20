@@ -48,7 +48,7 @@
                                 <span >{{$value->name}}</span>
                                 @endif
                             </td>
-                            <td><img src="{{asset('public/'.$value->image)}}" class="backend-image" alt=""></td>
+                            <td><img src="{{asset($value->image)}}" class="backend-image" alt=""></td>
                             <td>
                                 @if($value->status==1)
                                 <span class="badge bg-soft-success text-success">Active</span> 

@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Category;
 use App\Models\Contact;
 use App\Models\GeneralSetting;
 use App\Models\SocialMedia;
@@ -35,12 +36,13 @@ class AppServiceProvider extends ServiceProvider
               $contact = Cache::remember('contact', now()->addDays(7), function () {
                 return Contact::where('status', 1)->first();
             });
-
+              $categories = Category::where('status', operator: 1)->select('id', 'name', 'slug', 'status', 'image')->get();
 
             $view->with([
             'generalsetting' => $generalsetting,
             'socialicons' => $socialicons,
             'contact' => $contact,
+            'categories' => $categories,
             ]);
 
          });

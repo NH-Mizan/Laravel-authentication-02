@@ -7,6 +7,7 @@ use App\Http\Controllers\admin\ChildcategoryController;
 use App\Http\Controllers\admin\ColorController;
 use App\Http\Controllers\admin\ContactController;
 use App\Http\Controllers\admin\GeneralSettingController;
+use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\SizeController;
 use App\Http\Controllers\admin\SocialMediaController;
 use App\Http\Controllers\admin\SubcategoryController;
@@ -38,6 +39,8 @@ Auth::routes();
 Route::group(['namespace' => 'Frontend'], function () {
   Route::get('/', [FrontendController::class, 'index'])->name('home');
   Route::get('brand/{slug}', [FrontendController::class, 'brand'])->name('brand');
+
+     Route::get('category/{category}', [FrontendController::class, 'category'])->name('category');
 });
 
 
@@ -175,6 +178,30 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['aut
     Route::post('size/inactive', [SizeController::class, 'inactive'])->name('sizes.inactive');
     Route::post('size/active', [SizeController::class, 'active'])->name('sizes.active');
     Route::post('size/destroy', [SizeController::class, 'destroy'])->name('sizes.destroy');
+
+     // product
+    Route::get('products/manage', [ProductController::class, 'index'])->name('products.index');
+    Route::get('products/stock-alert', [ProductController::class, 'stock_alert'])->name('products.stock_alert');
+    Route::get('products/{id}/show', [ProductController::class, 'show'])->name('products.show');
+    Route::get('products/create', [ProductController::class, 'create'])->name('products.create');
+    Route::post('products/save', [ProductController::class, 'store'])->name('products.store');
+    Route::get('products/{id}/edit', [ProductController::class, 'edit'])->name('products.edit');
+    Route::post('products/update', [ProductController::class, 'update'])->name('products.update');
+    Route::post('products/inactive', [ProductController::class, 'inactive'])->name('products.inactive');
+    Route::post('products/active', [ProductController::class, 'active'])->name('products.active');
+    Route::post('products/destroy', [ProductController::class, 'destroy'])->name('products.destroy');
+    Route::get('products/image/destroy', [ProductController::class, 'imgdestroy'])->name('products.image.destroy');
+    Route::get('products/price/destroy', [ProductController::class, 'pricedestroy'])->name('products.price.destroy');
+    Route::get('products/update-deals', [ProductController::class, 'update_deals'])->name('products.update_deals');
+    Route::get('products/update-feature', [ProductController::class, 'update_feature'])->name('products.update_feature');
+    Route::get('products/update-status', [ProductController::class, 'update_status'])->name('products.update_status');
+    Route::post('products/barcode-update', [ProductController::class, 'barcode_update'])->name('products.barcode_update');
+    Route::get('products/barcode', [ProductController::class, 'barcode'])->name('products.barcode');
+    Route::get('products/purchase-create', [ProductController::class, 'purchase_create'])->name('products.purchase_create');
+    Route::post('products/purchase-store', [ProductController::class, 'purchase_store'])->name('products.purchase_store');
+    Route::get('products/purchase-list', [ProductController::class, 'purchase_list'])->name('products.purchase');
+    Route::get('products/purchase/{id}', [ProductController::class, 'purchase_history'])->name('products.purchase_history');
+
 
 
 });

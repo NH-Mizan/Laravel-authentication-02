@@ -7,11 +7,15 @@ use App\Models\Banner;
 use App\Models\BannerCategory;
 use Brian2694\Toastr\Facades\Toastr;
 use File;
+use DB;
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\Encoders\WebpEncoder;
 use Illuminate\Http\Request;
 
 class BannerController extends Controller
 {
-     public function index(Request $request)
+    public function index(Request $request)
     {
         $data = Banner::orderBy('id', 'DESC')->with('category')->get();
         return view('backEnd.banner.index', compact('data'));
@@ -22,29 +26,52 @@ class BannerController extends Controller
         return view('backEnd.banner.create', compact('bcategories'));
     }
 
-    
+
     public function store(Request $request)
     {
         $this->validate($request, [
             'link' => 'required',
             'status' => 'required',
+            'image' => 'required|image|mimes:jpeg,jpg,png,webp'
         ]);
 
-        // image with intervention
-        $file = $request->file('image');
-        $name = time() . $file->getClientOriginalName();
-        $uploadPath = 'public/uploads/banner/';
-        $file->move($uploadPath, $name);
-        $fileUrl = $uploadPath . $name;
+        // Setup image manager
+        $manager = new ImageManager(new Driver());
+        $image = $request->file('image');
 
+        // Create webp file name
+        $name = time() . '-' . $image->getClientOriginalName();
+        $name = preg_replace('"\.(jpg|jpeg|png|webp)$"', '.webp', $name);
+        $name = strtolower(preg_replace('/\s+/', '-', $name));
+
+        // Save path in public folder (real file system)
+        $uploadFolder = 'public/uploads/banner/';
+        $publicPath = public_path($uploadFolder);
+
+        if (!file_exists($publicPath)) {
+            mkdir($publicPath, 0755, true);
+        }
+
+        $fullImagePath = $publicPath . $name;
+
+        // Read, resize, encode and save
+        $img = $manager->read($image->getRealPath());
+        $img->resize(500, null);
+        $webp = new WebpEncoder(quality: 90);
+        $img->encode($webp)->save($fullImagePath);
+
+        // Save image path for database
         $input = $request->all();
+        $input['image'] = $uploadFolder . $name; 
         $input['status'] = $request->status ? 1 : 0;
-        $input['image'] = $fileUrl;
         Banner::create($input);
+
         Toastr::success('Success', 'Data insert successfully');
         return redirect()->route('banners.index');
     }
-     public function edit($id)
+
+
+    public function edit($id)
     {
         $edit_data = Banner::find($id);
         $bcategories = BannerCategory::select('id', 'name')->get();

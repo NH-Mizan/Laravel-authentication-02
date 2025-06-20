@@ -213,7 +213,7 @@
                 <div id="sidebar-menu">
                     <div class="main-logo">
                         <a href="{{ url('admin/dashboard') }}">
-                            <img src="{{ asset(Auth::user()->image) }}" alt="">
+                            <img src="{{  asset('public/' . $generalsetting->dark_logo) }}" alt="">
                         </a>
                     </div>
                     <ul id="side-menu">
