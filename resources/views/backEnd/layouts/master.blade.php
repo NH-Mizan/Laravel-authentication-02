@@ -234,7 +234,7 @@
                             <div class="collapse" id="siebar-product">
                                 <ul class="nav-second-level">
                                     <li>
-                                        <a href=""><i data-feather="minus"></i>
+                                        <a href="{{ route('products.index') }}"><i data-feather="minus"></i>
                                             Product Manage</a>
                                     </li>
                                     <li>
