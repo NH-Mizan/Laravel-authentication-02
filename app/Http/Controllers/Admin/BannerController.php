@@ -57,7 +57,7 @@ class BannerController extends Controller
         // Read, resize, encode and save
         $img = $manager->read($image->getRealPath());
         $img->resize(500, null);
-        $webp = new WebpEncoder(quality: 90);
+        $webp = new WebpEncoder(quality: 90);   
         $img->encode($webp)->save($fullImagePath);
 
         // Save image path for database
