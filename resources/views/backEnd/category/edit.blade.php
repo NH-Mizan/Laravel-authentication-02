@@ -40,7 +40,6 @@
                                 </div>
                             </div>
                             <!-- col-end -->
-
                             <div class="col-sm-12 mb-3">
                                 <div class="form-group">
                                     <label for="image" class="form-label">Image *</label>
