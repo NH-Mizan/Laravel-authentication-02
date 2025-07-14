@@ -39,7 +39,7 @@ Auth::routes();
 Route::group(['namespace' => 'Frontend'], function () {
   Route::get('/', [FrontendController::class, 'index'])->name('home');
   Route::get('brand/{slug}', [FrontendController::class, 'brand'])->name('brand');
-  Route::get('category/{slug}', [FrontendController::class, 'brand'])->name('brand');
+  Route::get('/category/{slug}', [FrontendController::class, 'show'])->name('category');
   Route::get('products/{slug}', [FrontendController::class, 'products'])->name('products');
   Route::get('subcategory/{subcategory}', [FrontendController::class, 'subcategory'])->name('subcategory');
 

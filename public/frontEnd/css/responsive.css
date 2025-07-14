@@ -2,7 +2,7 @@
     --background-color: #F7F7F7;
     --primary-color: #ED145B;
     --secondary-color: #00aef0;
-    --secondary-color-extra: #153e58;
+   --secondary-color-extra: #27315f;
 }
 @media only screen and (min-width:767px) {
     .mobile-menu {

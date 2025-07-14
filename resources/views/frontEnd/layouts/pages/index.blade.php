@@ -44,7 +44,7 @@
                     @foreach($categories as $key=>$value)
                     <div class="cat-item">
                         <div class="cat-img">
-                            <a href="">
+                            <a href="{{route('category',$value->slug)}}">
                                 <img src="{{asset($value->image)}}" alt="">
                             </a>
                         </div>

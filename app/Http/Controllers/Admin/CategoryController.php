@@ -38,7 +38,8 @@ class CategoryController extends Controller
         $input = $request->all();
         $input['image'] = $fileUrl;
 
-        
+        $input['slug'] = Str::slug($request->name);
+        $input['slug'] = str_replace('/', '', $input['slug']);
         $input['status'] = $request->status ? 1 : 0;
 
         Category::create($input);
@@ -46,84 +47,84 @@ class CategoryController extends Controller
     }
 
 
-        public function edit($id)
+    public function edit($id)
     {
         $edit_data = Category::find($id);
-        $categories = Category::select('id','name')->get();
-        return view('backEnd.category.edit',compact('edit_data','categories'));
+        $categories = Category::select('id', 'name')->get();
+        return view('backEnd.category.edit', compact('edit_data', 'categories'));
     }
 
 
     public function update(Request $request)
-{
-    $this->validate($request, [
-        'name' => 'required',
-    ]);
+    {
+        $this->validate($request, [
+            'name' => 'required',
+        ]);
 
-    $update_data = Category::find($request->id);
-    $input = $request->all();
+        $update_data = Category::find($request->id);
+        $input = $request->all();
 
-    $image = $request->file('image');
-    if ($image) {
-        // Initialize the Image Manager
-        $manager = new ImageManager(new Driver());
+        $image = $request->file('image');
+        if ($image) {
+            // Initialize the Image Manager
+            $manager = new ImageManager(new Driver());
 
-        // Prepare image name and path
-        $name = time() . '-' . Str::slug(pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME)) . '.webp';
-        $uploadpath = 'public/uploads/category/';
-        $imageUrl = $uploadpath . $name;
+            // Prepare image name and path
+            $name = time() . '-' . Str::slug(pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME)) . '.webp';
+            $uploadpath = 'public/uploads/category/';
+            $imageUrl = $uploadpath . $name;
 
-        // Create folder if not exist
-        if (!file_exists(public_path($uploadpath))) {
-            mkdir(public_path($uploadpath), 0755, true);
-        }
+            // Create folder if not exist
+            if (!file_exists(public_path($uploadpath))) {
+                mkdir(public_path($uploadpath), 0755, true);
+            }
 
-        // Read and resize image
-        $img = $manager->read($image->getRealPath());
+            // Read and resize image
+            $img = $manager->read($image->getRealPath());
 
-        $width = 400;
-        $height = 400;
+            $width = 400;
+            $height = 400;
 
-        if ($img->height() > $img->width()) {
-            $width = null;
+            if ($img->height() > $img->width()) {
+                $width = '';
+            } else {
+                $height = '';
+            }
+
+            $img->resize($width ?? 400, $height ?? 400);
+
+            // Delete old image
+            if (File::exists(public_path($update_data->image))) {
+                File::delete(public_path($update_data->image));
+            }
+
+            // Save image
+            $img->toWebp(90)->save(public_path($imageUrl));
+
+            $input['image'] = $imageUrl;
         } else {
-            $height = null;
+            $input['image'] = $update_data->image;
         }
 
-        $img->resize($width ?? 400, $height ?? 400);
+        // Generate slug
+        $input['slug'] = Str::slug($request->name);
+        $input['slug'] = str_replace('/', '', $input['slug']);
+        $input['front_view'] = $request->front_view ? 1 : 0;
+        $input['status'] = $request->status ? 1 : 0;
 
-        // Delete old image
-        if (File::exists(public_path($update_data->image))) {
-            File::delete(public_path($update_data->image));
-        }
+        $update_data->update($input);
 
-        // Save image
-        $img->toWebp(90)->save(public_path($imageUrl));
-
-        $input['image'] = $imageUrl;
-    } else {
-        $input['image'] = $update_data->image;
+        Toastr::success('Success', 'Data update successfully');
+        return redirect()->route('categories.index');
     }
 
-    // Generate slug
-    $input['slug'] = Str::slug($request->name);
-    $input['slug'] = str_replace('/', '', $input['slug']);
-    $input['front_view'] = $request->front_view ? 1 : 0;
-    $input['status'] = $request->status ? 1 : 0;
 
-    $update_data->update($input);
-
-    Toastr::success('Success', 'Data update successfully');
-    return redirect()->route('categories.index');
-}
-    
-
-public function inactive(Request $request)
+    public function inactive(Request $request)
     {
         $inactive = Category::find($request->hidden_id);
         $inactive->status = 0;
         $inactive->save();
-        Toastr::success('Success','Data inactive successfully');
+        Toastr::success('Success', 'Data inactive successfully');
         return redirect()->back();
     }
     public function active(Request $request)
@@ -131,13 +132,13 @@ public function inactive(Request $request)
         $active = Category::find($request->hidden_id);
         $active->status = 1;
         $active->save();
-        Toastr::success('Success','Data active successfully');
+        Toastr::success('Success', 'Data active successfully');
         return redirect()->back();
     }
     public function destroy(Request $request)
     {
         $category = Category::find($request->hidden_id);
-        
+
         foreach ($category->subcategories ?? [] as $subcategory) {
             foreach ($subcategory->childcategories ?? [] as $childCategory) {
                 $childCategory->delete();
@@ -166,7 +167,7 @@ public function inactive(Request $request)
         }
         File::delete($category->image);
         $category->delete();
-        Toastr::success('Success','Data delete successfully');
+        Toastr::success('Success', 'Data delete successfully');
         return redirect()->back();
     }
 }
